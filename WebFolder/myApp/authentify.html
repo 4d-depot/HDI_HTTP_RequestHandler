@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="startDemo.css">
+
+</head>
+
+	<body>
+
+<br/>
+<p class="fw-normal fs-3 text-center">This demo shows how to get a sequential number safely regarding concurrent accesses.</p>
+
+<br/>
+<br/>
+
+<div class="text-center">
+  <img src="/images/Schema.jpeg" class="img-fluid" alt="Internal behavior">
+</div>
+
+<br/>
+<br/>
+
+<h4><span class="badge bg-primary">1</span>  Principle:</h4>
+<br/>
+
+<p class="fw-light">There is a <span class="fst-italic"> provideSequentialNumber</span> function available in 
+the DataStore class.
+This function deletes the entities in the <span class="fst-italic">SequentialNumber</span> table
+and creates a new entity. It returns the <span class="fst-italic"> number</span> attribute of this entity.
+</p>
+<p class="fw-light">Because the <span class="fst-italic">number</span> attribute is <span class="fw-bold">auto incremented</span>,
+ it makes sure this number is unique even if several requests <span class="fst-italic">/rest/$catalog/provideSequentialNumber</span>
+  are sent at the same time to the server.</p>
+
+<p class="fw-light">Note the <span class="fst-italic">SequentialNumber</span> dataclass is not exposed as a REST resource.
+The access to this table is nested in the <span class="fst-italic"> provideSequentialNumber</span> function.
+</p>
+
+
+
+<p class="fw-light">Click on the
+ <span class="fw-bold">Next</span> button below to run the request <span class="fst-italic">/rest/$catalog/provideSequentialNumber</span>
+ and check the returned sequential number.
+</p>
+<br/>
+
+
+  <div class="w-auto">
+  <div class="align-bottom p-3 d-inline lead">Current sequential number:</div>       
+       <div id="current"  class="w-50 align-bottom p-3 d-inline lead"> ---</div>
+              <div class="p-3 d-inline"> 
+   <button id ="nextButton" type="button" class = "btn btn-primary" onclick="onClickNext()"> Next </button>
+          </div>
+</div>
+  
+<br/>
+<br/>
+
+<h4><span class="badge bg-primary">2</span>   Want to simulate several requests asking a sequential number?</h4>
+<br/>
+
+<p class="fw-light">Click on the 
+ <span class="fw-bold">Send 20 requests</span> button below to send a series of 20 requests <span class="fst-italic">/rest/$catalog/provideSequentialNumber</span>
+ to the server. </p>
+<p class="fw-light">The numbers returned by each request will be displayed below.
+You can verify these numbers are distinct and ordered in the same way the server proceeded the requests.</p>
+
+  <div class="d-inline"> 
+     <button id ="send20RequestsButton" type="button" class = "btn btn-primary" onclick="onClick20Requests()"> Send 20 requests</button>
+     <button id ="clearResultsButton" type="button" class = "btn btn-primary disabled" onclick="onClickClear()"> Clear results</button>
+  </div>
+  
+  
+   
+  <div class="align-bottom mt-3 lead">
+      <div class="d-inline align-bottom fw-bold text-success lead">RESULTS:</div>
+      <div class="d-inline ms-3 align-bottom text-center lead" id="requestsResult"></div>
+   </div>
+     
+<script src ="./startDemo.js"> </script>
+
+	</body>  
+</html>
+	  

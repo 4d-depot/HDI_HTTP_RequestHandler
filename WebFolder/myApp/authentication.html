@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  
+  <style>
+  
+  
+  
+  
+   .input {
+   border-color : #9ea7ba;
+  border-width : 1px;
+   border-radius : 15px;
+   width : 300px;
+   height : 40px;
+    font-family : "Poppins"; 
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.textInput {
+  display : flex;
+flex-direction : column;
+justify-content : flex-start;
+
+}
+
+.info {
+color: #9ea7ba;
+font-size: 14px;
+}
+
+.image {
+height : auto;
+width : 60px
+}
+
+.button {
+  background-color : #71c195;
+  width : 150px;
+  height:40px;
+  border-radius : 8px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  border-color : transparent;
+  color : #ffffff;
+  font-size: 16px;
+  font-weight : 600;
+}
+
+.form {
+width: 40%;
+height: 50%;
+}
+
+.mainBody {
+background: rgb(235,248,250);
+background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 98%); 
+}
+
+.main {
+     font-family : "Poppins";    
+display : flex;
+  flex-direction : column;
+  justify-content : center;
+  align-items : center;
+}
+
+.card {
+margin-left: 100px;
+margin-top: 100px;
+padding-top: 50px;
+padding-bottom: 50px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+display : flex;
+flex-direction : column;
+align-items : center;
+justify-content : flex-start;
+gap : 30px;
+width : 80%;
+background-color: #ffffff;
+ border-radius : 15px;
+ }
+ 
+ .error {
+ color : red;
+ }
+  
+  </style>
+
+  
+</head>
+
+
+<body class="mainBody">
+
+<div class="main">
+
+<FORM name="myForm" class = "form">
+
+<div class="card"  id="demo">
+
+<div class="info"> Pleeeeeease sign up to enter the 4D Rent a car application</div>
+
+<div class = "textInput">
+<label for="identifier">Identifier</label>
+<INPUT class="input" id="identifier" TYPE=TEXT NAME=identifier VALUE="">
+</div>
+
+<div class = "textInput">
+<label for="password">Password</label>
+<INPUT class="input" id="password"  type="password" NAME=password VALUE="">
+</div>
+
+<button class="button" type="button" onclick="onClick()">Enter</button>
+
+<div id="authenticationFailed" class="error"  style="visibility:hidden;"></div>
+
+</div>
+
+<BR>
+<BR>
+
+
+
+</form>
+
+</div>
+
+<script>
+function onClick()
+{
+sendData({identifier:document.forms['myForm'].elements['identifier'].value , password:document.forms['myForm'].elements['password'].value})
+};
+
+function sendData(data) {
+  var XHR = new XMLHttpRequest();
+  
+  let myArray = [];
+    
+  myArray.push(data);
+  
+  XHR.onload = function() {
+    let result = XHR.response;
+    if (JSON.parse(result).result === 'OK')  { 
+      window.location = "http://127.0.0.1/myApp/welcome.html";
+      }
+      else {
+      document.getElementById("authenticationFailed").style.visibility = "visible";
+      document.getElementById("authenticationFailed").innerHTML = result.result;
+      }
+  };
+  
+  XHR.open('POST', 'http://127.0.0.1:80/rest/$catalog/authentify'); 
+// XHR.setRequestHeader('identifier', data.identifier);
+//  XHR.setRequestHeader('password', data.password);
+  XHR.send(JSON.stringify(myArray));
+};
+ </script>
+	</body>
+</div>
+
+</html>
+	  
+

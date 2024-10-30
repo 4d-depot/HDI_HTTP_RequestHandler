@@ -1,0 +1,33 @@
+{
+	"permissions": {
+		"allowed": []
+	},
+	"privileges": [
+		{
+			"id": "4JDejNikgYpopzHJvRbaGu",
+			"privilege": "simple",
+			"includes": []
+		},
+		{
+			"id": "4AvzcAB6q7KonASa9YLxck",
+			"privilege": "high",
+			"includes": []
+		}
+	],
+	"roles": [
+		{
+			"id": "5Vur27UEau4KnBG8ukqKD7",
+			"role": "Admin",
+			"privileges": [
+				"high"
+			]
+		},
+		{
+			"id": "5cPX8x8eyTf25z8ZDXKiKH",
+			"role": "Employee",
+			"privileges": [
+				"simple"
+			]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+[
+    {
+        "class": "GeneralHandling",
+        "method": "handleApp",
+        "regexPattern": "/myApp",
+        "verbs": "get,post"
+    }
+]
