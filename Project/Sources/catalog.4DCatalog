@@ -28,11 +28,13 @@
 		<field name="identifier" uuid="BA447253014F48C19CC90883FB8F4A88" type="10" limiting_length="255" never_null="true" id="2"/>
 		<field name="password" uuid="15788FF5FBE04B2D8153FA6036F445C5" type="10" limiting_length="255" never_null="true" id="3"/>
 		<field name="role" uuid="ED59AAB8DDDF48C78E9520A7312F2A1E" type="10" limiting_length="255" never_null="true" id="4"/>
+		<field name="firstname" uuid="DF6D9EB15F9D47D08CD5D656E6E8D2A3" type="10" limiting_length="255" never_null="true" id="5"/>
+		<field name="lastname" uuid="03E703A927664CBC99820EF0D9031655" type="10" limiting_length="255" never_null="true" id="6"/>
 		<primary_key field_name="ID" field_uuid="ABD6359470924D5893C41AE5D88A222E"/>
 		<table_extra>
-			<editor_table_info displayable_fields_count="6">
+			<editor_table_info displayable_fields_count="8">
 				<color red="255" green="255" blue="255" alpha="0"/>
-				<coordinates left="240" top="40" width="120" height="167.33203125"/>
+				<coordinates left="240" top="40" width="217" height="227.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>

@@ -6,9 +6,6 @@
   
   <style>
   
-  
-  
-  
    .input {
    border-color : #9ea7ba;
   border-width : 1px;
@@ -28,8 +25,8 @@ justify-content : flex-start;
 }
 
 .info {
-color: #9ea7ba;
-font-size: 14px;
+color: #556077;
+font-size: 18px;
 }
 
 .image {
@@ -102,7 +99,7 @@ background-color: #ffffff;
 
 <div class="card"  id="demo">
 
-<div class="info"> Pleeeeeease sign up to enter the 4D Rent a car application</div>
+<div class="info"> Please authenticate yourself</div>
 
 <div class = "textInput">
 <label for="identifier">Identifier</label>
@@ -149,7 +146,7 @@ function sendData(data) {
       }
       else {
       document.getElementById("authenticationFailed").style.visibility = "visible";
-      document.getElementById("authenticationFailed").innerHTML = result.result;
+      document.getElementById("authenticationFailed").innerHTML = JSON.parse(result).result;
       }
   };
   

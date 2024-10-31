@@ -8,7 +8,7 @@ exposed Function authentify($credentials : Object) : Text
 	var $user : cs:C1710.UsersEntity
 	var $result : Text
 	
-	$result:="KO"
+	$result:="Authentication failed"
 	
 	$users:=ds:C1482.Users.query("identifier = :1"; $credentials.identifier)
 	$user:=$users.first()
