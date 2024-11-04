@@ -10,10 +10,6 @@ Function handleApp($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessa
 	
 	
 	If (Session:C1714.isGuest())
-		
-		
-		
-		
 		$result.setHeader("Location"; "http://127.0.0.1/authentication/authentication.html")
 		$result.setStatus(307)
 		
@@ -23,6 +19,7 @@ Function handleApp($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessa
 			If ($file.exists)
 				$result.setBody($file.getContent())
 				$result.setHeader("Content-Type"; "text/html")
+				//$result.setHeader("Content-Type"; "text/javascript")
 			Else 
 				$result.setHeader("Location"; "http://127.0.0.1/error/notFound.html")
 				$result.setStatus(307)

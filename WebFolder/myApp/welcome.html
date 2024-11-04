@@ -47,11 +47,6 @@ width : 60px
   font-weight : 600;
 }
 
-.form {
-width: 40%;
-height: 50%;
-}
-
 .mainBody {
 background: rgb(235,248,250);
 background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 98%); 
@@ -59,24 +54,24 @@ background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 
 
 .main {
      font-family : "Poppins";    
-display : flex;
-  flex-direction : column;
-  justify-content : center;
-  align-items : center;
+  display : flex;
+  flex-direction : row;
+  justify-content : flex-start;
+  align-items : start;
 }
 
 .card {
+margin-top: 50px;
 margin-left: 100px;
-margin-top: 100px;
-padding-top: 50px;
-padding-bottom: 50px;
+padding-top: 20px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 display : flex;
 flex-direction : column;
 align-items : center;
 justify-content : flex-start;
 gap : 30px;
-width : 80%;
+width : 30%;
+height : 300px;
 background-color: #ffffff;
  border-radius : 15px;
  }
@@ -91,16 +86,13 @@ background-color: #ffffff;
 </head>
 
 
-<body class="mainBody">
+<body class="mainBody" onLoad="getUser()">
 
 <div class="main">
 
-<FORM name="myForm" class = "form">
-
 <div class="card"  id="demo">
 
-<div class="info"> Welcome in the app!</div>
-
+<div class="info"> Welcome in the app, <b><span id="user"> </span></b> !</div>
 
 
 <BR>
@@ -114,7 +106,19 @@ background-color: #ffffff;
 
 <script>
 
+function getUser() {
+  var XHR = new XMLHttpRequest();
+  
+  XHR.onload = function() {
+    let response = XHR.response;
+      document.getElementById("user").innerHTML = JSON.parse(response).result.fullname;
+      
+  };
+  XHR.open('POST', 'http://127.0.0.1:80/rest/$singleton/Utilities/getUser'); 
+  XHR.send();
+};
  </script>
+ 
 	</body>
 </div>
 
