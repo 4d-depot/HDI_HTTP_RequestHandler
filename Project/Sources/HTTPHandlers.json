@@ -4,5 +4,17 @@
         "method": "handleApp",
         "regexPattern": "/myApp",
         "verbs": "get,post"
+    },
+    {
+        "class": "FilesHandling",
+        "method": "handleFiles",
+        "regexPattern": "/fileUpload/",
+        "verbs": "post"
+    },
+    {
+        "class": "FilesHandling",
+        "method": "handleFiles",
+        "regexPattern": "/fileDownload",
+        "verbs": "get"
     }
 ]

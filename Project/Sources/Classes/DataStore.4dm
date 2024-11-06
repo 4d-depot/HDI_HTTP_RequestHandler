@@ -30,3 +30,6 @@ exposed Function authentify($credentials : Object) : Text
 	
 	return $result
 	
+exposed Function clearSession() : Text
+	Session:C1714.clearPrivileges()
+	return "OK"

@@ -38,6 +38,25 @@
 			</editor_table_info>
 		</table_extra>
 	</table>
+	<table name="Products" uuid="F96EC653B2EE4F10ACBB407F36B11253" id="3">
+		<field name="ID" uuid="7A0DFF91AFB64BD5AFA0D16D67A768EC" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="64CF91FB22604C84BB17CDFC054C1A6C" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="description" uuid="24DE4AC6ABA847358FF2A93F49D8B529" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="price" uuid="6692199190D54629B2460729AF140F9A" type="6" never_null="true" id="4"/>
+		<field name="picture" uuid="B49A63F8EBD348EFAA12D579EB8A8148" type="12" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="7A0DFF91AFB64BD5AFA0D16D67A768EC"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="640" top="40" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" unique_keys="true" uuid="3F9EAA84162F4CBBBF10EF6605BEF0D9" type="7">
+		<field_ref uuid="7A0DFF91AFB64BD5AFA0D16D67A768EC" name="ID">
+			<table_ref uuid="F96EC653B2EE4F10ACBB407F36B11253" name="Products"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="58F1532EAB224C80B0494B1BAF9450CB" type="7">
 		<field_ref uuid="ABD6359470924D5893C41AE5D88A222E" name="ID">
 			<table_ref uuid="4EF8F0E4ED09497D927CC6B86E449FB1" name="Users"/>

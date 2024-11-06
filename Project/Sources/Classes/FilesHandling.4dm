@@ -1,0 +1,73 @@
+
+shared singleton Class constructor()
+	
+	
+	
+Function handleFiles($request : 4D:C1709.IncomingMessage) : Object
+	var $result:=4D:C1709.OutgoingMessage.new()
+	var $file : 4D:C1709.File
+	
+	var $image; $thumbnail : Picture
+	var $width; $height : Integer
+	var $name; $type : Text
+	
+	
+	var $body : Blob
+	var $fileName; $fileType : Text
+	var $file : 4D:C1709.File
+	var $created : Boolean
+	
+	
+	Case of 
+			
+		: ($request.urlPath.first()="fileUpload")
+			
+			//$body:=$request.getBlob()
+			
+			$parts:=cs:C1710.HandleWebBodyParts.me.handleWebBodyParts()
+			
+			
+			//For ($i; 1; WEB Get body part count)  //for each part
+			//WEB GET BODY PART($i; $vPartContentBlob; $vPartName; $vPartMimeType; $vPartFileName)
+			//If ($vPartFileName#"")
+			//BLOB TO DOCUMENT($vDestinationFolder+$vPartFileName; $vPartContentBlob)
+			//End if 
+			//End for
+			
+			For each ($prop; $parts)
+				If ($prop#"size")
+					$file:=File:C1566("/RESOURCES/Files/"+$parts[$prop].name)
+					$created:=$file.create()
+					$file.setContent($parts[$prop].content)
+				End if 
+			End for each 
+			
+			
+			//$file:=File("/RESOURCES/Files/theFile")
+			//$created:=$file.create()
+			//$file.setContent($body)
+			
+			//$result.setBody("Upload OK - File size: "+String($file.size))
+			$result:={status: String:C10(OB Entries:C1720($parts).length-1)+" files have been uploaded - Total size: "+String:C10($parts.size)+" bytes"}
+			
+		: ($request.urlPath.first()="fileDownload")
+			
+			$name:=$request.urlQuery.name
+			$type:=$request.urlQuery.type
+			$width:=Num:C11($request.urlQuery.width)
+			$height:=Num:C11($request.urlQuery.height)
+			
+			Case of 
+				: ($type="image")
+					$file:=File:C1566("/RESOURCES/Images/Products/"+$name+".jpg")
+					
+					READ PICTURE FILE:C678($file.platformPath; $image)
+					CREATE THUMBNAIL:C679($image; $thumbnail; $width; $height; Scaled to fit:K6:2)
+					
+					$result.setBody($thumbnail)
+					$result.setHeader("Content-Type"; "image/jpeg")
+			End case 
+			
+	End case 
+	
+	return $result

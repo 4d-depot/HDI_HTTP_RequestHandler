@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Yellow Pack",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict1.jpg"
+  },
+  {
+    "name": "Pink Pack",
+    "price": 120,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict2.jpg"
+  },
+  {
+    "name": "Green Pack",
+    "price": 80,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict3.jpg"
+  },
+  {
+    "name": "Blue Pack",
+    "price": 70,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict4.jpg"
+  },
+  {
+    "name": "White Pack",
+    "price": 140,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict5.jpg"
+  },
+  {
+    "name": "Light blue Pack",
+    "price": 160,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict6.jpg"
+  },
+  {
+    "name": "Brown Pack",
+    "price": 150,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict7.jpg"
+  },
+  {
+    "name": "Light Green Pack",
+    "price": 120,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "picture": "/$shared/visuals/pict8.jpg"
+  }
+]

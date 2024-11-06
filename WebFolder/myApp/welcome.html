@@ -85,6 +85,7 @@ background-color: #ffffff;
   
 </head>
 
+<FORM name="myForm" class = "form">
 
 <body class="mainBody" onLoad="getUser()">
 
@@ -94,11 +95,16 @@ background-color: #ffffff;
 
 <div class="info"> Welcome in the app, <b><span id="user"> </span></b> !</div>
 
+<a href="http://127.0.0.1/myApp/page1.html"> /myApp/page1.html</a>
+<a href="http://127.0.0.1/myApp/fileUpload.html"> /myApp/fileUpload.html</a>
+<a href="http://127.0.0.1/myApp/xxxx.html"> /myApp/xxxx.html</a>
+<a href="http://127.0.0.1/myApp/confidential/info.html"> /myApp/confidential/info.html</a>
+
+
+<button class="button" type="button" onclick="quit()">Quit</button>
 
 <BR>
 <BR>
-
-
 
 </form>
 
@@ -117,6 +123,22 @@ function getUser() {
   XHR.open('POST', 'http://127.0.0.1:80/rest/$singleton/Utilities/getUser'); 
   XHR.send();
 };
+
+function quit() {
+  var XHR = new XMLHttpRequest();
+  
+ 
+  XHR.onload = function() {
+    let result = XHR.response;
+    if (JSON.parse(result).result === 'OK')  { 
+      window.location = "http://127.0.0.1/myApp/";
+      }
+  };
+  
+  XHR.open('POST', 'http://127.0.0.1:80/rest/$catalog/clearSession'); 
+  XHR.send();
+};
+
  </script>
  
 	</body>
