@@ -24,8 +24,14 @@ Function handleApp($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessa
 				$result.setStatus(307)
 			End if 
 		Else 
-			$result.setHeader("Location"; "http://127.0.0.1/error/notAuthorized.html")
-			$result.setStatus(307)
+			
+			If (($request.urlPath.length=1) && ($request.url="/myApp/"))
+				$result.setHeader("Location"; "http://127.0.0.1/myApp/welcome.html")
+				$result.setStatus(307)
+			Else 
+				$result.setHeader("Location"; "http://127.0.0.1/error/notAuthorized.html")
+				$result.setStatus(307)
+			End if 
 		End if 
 		
 	End if 

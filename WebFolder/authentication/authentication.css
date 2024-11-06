@@ -39,11 +39,6 @@ width : 60px
   font-weight : 600;
 }
 
-.form {
-width: 40%;
-height: 50%;
-}
-
 .mainBody {
 background: rgb(235,248,250);
 background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 98%); 
@@ -61,13 +56,14 @@ background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 
 margin-top: 50px;
 margin-left: 100px;
 padding-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 display : flex;
 flex-direction : column;
 align-items : center;
 justify-content : flex-start;
 gap : 30px;
-width : 80%;
 background-color: #ffffff;
  border-radius : 15px;
  }

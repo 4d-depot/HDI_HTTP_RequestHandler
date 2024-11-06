@@ -2,7 +2,17 @@
 	"metadata": {
 		"v": "1.0",
 		"datasources": [],
-		"styles": []
+		"styles": [
+			{
+				"name": "draft",
+				"content": "self {\n  gap : 30px;\n}",
+				"children": {},
+				"parentId": null,
+				"scope": "local",
+				"origin": "XBujJmGnyZ",
+				"id": "-LIP1mUgCbnf3U9es9clb"
+			}
+		]
 	},
 	"components": {
 		"ROOT": {
@@ -40,13 +50,100 @@
 				"events": [],
 				"iterableChild": true,
 				"style": {
-					"width": "40%",
-					"height": "50%"
-				}
+					"display": "flex",
+					"flexDirection": "column",
+					"justifyContent": "space-between",
+					"alignItems": "start",
+					"gap": "30px"
+				},
+				"classNames": [
+					"draft"
+				]
 			},
 			"displayName": "Stylebox",
 			"custom": {},
 			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"zTHk-v72Pd",
+				"qYmPUEhc5h"
+			],
+			"linkedNodes": {}
+		},
+		"zTHk-v72Pd": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Button",
+				"classNames": [],
+				"events": [],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "XBujJmGnyZ",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "IQ-1ux0DPh"
+			}
+		},
+		"IQ-1ux0DPh": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": []
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "zTHk-v72Pd",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"qYmPUEhc5h": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Button",
+				"classNames": [],
+				"events": [],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "XBujJmGnyZ",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "jZUm31zbrI"
+			}
+		},
+		"jZUm31zbrI": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": []
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "qYmPUEhc5h",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}

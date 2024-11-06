@@ -58,34 +58,29 @@ background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 
   flex-direction : row;
   justify-content : flex-start;
   align-items : start;
-}
 
 .card {
 margin-top: 50px;
 margin-left: 100px;
 padding-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-display : flex;
-flex-direction : column;
-align-items : center;
-justify-content : flex-start;
-gap : 30px;
-width : 30%;
-height : 300px;
+    display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+  align-items : center;
+  gap : 30px;
 background-color: #ffffff;
  border-radius : 15px;
  }
- 
- .error {
- color : red;
- }
-  
+
   </style>
 
   
 </head>
 
-<FORM name="myForm" class = "form">
+<FORM name="myForm">
 
 <body class="mainBody" onLoad="getUser()">
 
@@ -96,7 +91,6 @@ background-color: #ffffff;
 <div class="info"> Welcome in the app, <b><span id="user"> </span></b> !</div>
 
 <a href="http://127.0.0.1/myApp/page1.html"> /myApp/page1.html</a>
-<a href="http://127.0.0.1/myApp/fileUpload.html"> /myApp/fileUpload.html</a>
 <a href="http://127.0.0.1/myApp/xxxx.html"> /myApp/xxxx.html</a>
 <a href="http://127.0.0.1/myApp/confidential/info.html"> /myApp/confidential/info.html</a>
 

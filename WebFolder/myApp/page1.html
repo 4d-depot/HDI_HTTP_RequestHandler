@@ -64,20 +64,16 @@ background: linear-gradient(108deg, rgba(235,248,250,1) 0%, rgba(250,239,251,1) 
 margin-top: 50px;
 margin-left: 100px;
 padding-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-display : flex;
-flex-direction : column;
-align-items : center;
-justify-content : flex-start;
-gap : 30px;
-width : 30%;
-height : 300px;
+    display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+  align-items : center;
+  gap : 30px;
 background-color: #ffffff;
  border-radius : 15px;
- }
- 
- .error {
- color : red;
  }
   
   </style>
@@ -94,7 +90,7 @@ background-color: #ffffff;
 
 <div class="info"> This is the page 1</div>
 
-<a href="http://127.0.0.1/myApp/welcome.html"> /myApp/welcome.html</a>
+<button onclick="history.back()" class="button">Go Back</button>
 
 <BR>
 <BR>

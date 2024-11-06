@@ -21,7 +21,7 @@ Case of
 		
 	: (Form event code:C388=On Page Change:K2:54)
 		
-		
+		Form:C1466.url:="http://127.0.0.1/myApp/"
 		
 	: (Form event code:C388=On Close Box:K2:21)
 		If (Is Windows:C1573 && Application info:C1599().SDIMode)
