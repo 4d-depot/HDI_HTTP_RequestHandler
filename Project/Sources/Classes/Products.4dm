@@ -24,7 +24,7 @@ exposed Function getProductData()
 		$picturePath:=$path+Replace string:C233($item.picture; "/$s"; "S")  //     /$shared/visuals/pict1.jpg
 		$picturePath:=Convert path POSIX to system:C1107($picturePath)
 		READ PICTURE FILE:C678($picturePath; $pict)
-		$item.picture:=$pict
+		$item.photo:=$pict
 	End for each 
 	
 	This:C1470.fromCollection($productsCol)

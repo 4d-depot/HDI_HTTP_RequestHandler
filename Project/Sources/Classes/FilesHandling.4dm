@@ -26,7 +26,6 @@ Function handleFiles($request : 4D:C1709.IncomingMessage) : Variant
 			
 			$parts:=cs:C1710.HandleWebBodyParts.me.handleWebBodyParts()
 			
-			
 			For each ($prop; $parts)
 				If ($prop#"size")
 					$file:=File:C1566("/RESOURCES/Files/"+$parts[$prop].name)
@@ -36,6 +35,7 @@ Function handleFiles($request : 4D:C1709.IncomingMessage) : Variant
 			End for each 
 			
 			$result:={status: String:C10(OB Entries:C1720($parts).length-1)+" files have been uploaded - Total size: "+String:C10($parts.size)+" bytes"}
+			
 			
 			
 		: ($request.urlPath.first()="fileDownload")
@@ -49,7 +49,6 @@ Function handleFiles($request : 4D:C1709.IncomingMessage) : Variant
 			
 			Case of 
 				: ($type="image")
-					
 					$file:=File:C1566("/RESOURCES/Images/Products/"+$name+".jpg")
 					
 					READ PICTURE FILE:C678($file.platformPath; $image)
@@ -59,7 +58,6 @@ Function handleFiles($request : 4D:C1709.IncomingMessage) : Variant
 					$result.setHeader("Content-Type"; "image/jpeg")
 					
 				: ($type="userManual")
-					
 					$file:=File:C1566("/RESOURCES/User manuals/"+$name+".pdf")
 					$result.setBody($file.getContent())
 					$result.setHeader("Content-Type"; "application/pdf")

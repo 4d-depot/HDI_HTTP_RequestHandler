@@ -2,7 +2,7 @@
 shared singleton Class constructor()
 	
 	
-Function buildURL($product : cs:C1710.ProductsEntity; $what : Text; $size : Text) : Text
+exposed Function buildURL($product : cs:C1710.ProductsEntity; $what : Text; $size : Text) : Text
 	
 	var $url : Text
 	var $width; $height : Integer

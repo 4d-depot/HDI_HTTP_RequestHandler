@@ -33,3 +33,8 @@ exposed Function authentify($credentials : Object) : Text
 exposed Function clearSession() : Text
 	Session:C1714.clearPrivileges()
 	return "OK"
+	
+exposed Function getPrivileges() : Text
+	return Session:C1714.getPrivileges().join(",")
+	
+	

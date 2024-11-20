@@ -1,6 +1,12 @@
 [
     {
         "class": "GeneralHandling",
+        "method": "gettingStarted",
+        "pattern": "start",
+        "verbs": "get, post"
+    },
+    {
+        "class": "GeneralHandling",
         "method": "handleApp",
         "regexPattern": "/myApp",
         "verbs": "get,post"

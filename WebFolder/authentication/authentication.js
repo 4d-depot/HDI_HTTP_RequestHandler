@@ -13,7 +13,7 @@ function sendData(data) {
   XHR.onload = function() {
     let result = XHR.response;
     if (JSON.parse(result).result === 'OK')  { 
-      window.location = "http://127.0.0.1/myApp/welcome.html";
+      window.location = "http://127.0.0.1/myApp";
       }
       else {
       document.getElementById("authenticationFailed").style.visibility = "visible";
@@ -22,7 +22,5 @@ function sendData(data) {
   };
   
   XHR.open('POST', 'http://127.0.0.1:80/rest/$catalog/authentify'); 
-// XHR.setRequestHeader('identifier', data.identifier);
-//  XHR.setRequestHeader('password', data.password);
   XHR.send(JSON.stringify(myArray));
 };
