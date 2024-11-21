@@ -86,13 +86,11 @@
 			"parent": "",
 			"hidden": false,
 			"nodes": [
-				"vEGeEQb21V",
-				"6buBvyHHjj",
-				"E3PgEwmRHN",
-				"oJ26E-scaU",
+				"aJkFngInv8",
 				"UmNqmHJKtG",
 				"rxTr13Um-U",
-				"DuVWC73Qcu"
+				"DuVWC73Qcu",
+				"delPUSMQgq"
 			],
 			"linkedNodes": {}
 		},
@@ -124,7 +122,7 @@
 			},
 			"displayName": "Button",
 			"custom": {},
-			"parent": "ROOT",
+			"parent": "aJkFngInv8",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {
@@ -176,7 +174,7 @@
 			},
 			"displayName": "Button",
 			"custom": {},
-			"parent": "ROOT",
+			"parent": "aJkFngInv8",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {
@@ -228,7 +226,7 @@
 			},
 			"displayName": "Button",
 			"custom": {},
-			"parent": "ROOT",
+			"parent": "aJkFngInv8",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {
@@ -280,7 +278,7 @@
 			},
 			"displayName": "Button",
 			"custom": {},
-			"parent": "ROOT",
+			"parent": "aJkFngInv8",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {
@@ -453,6 +451,168 @@
 			"displayName": "DataTable",
 			"custom": {},
 			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"aJkFngInv8": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"display": "flex",
+					"alignItems": "center"
+				}
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"vEGeEQb21V",
+				"6buBvyHHjj",
+				"E3PgEwmRHN",
+				"oJ26E-scaU"
+			],
+			"linkedNodes": {}
+		},
+		"delPUSMQgq": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"display": "flex",
+					"justifyContent": "space-between",
+					"alignItems": "center"
+				}
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"16gOpwMdV-"
+			],
+			"linkedNodes": {}
+		},
+		"16gOpwMdV-": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [
+					{
+						"type": "navigation",
+						"id": "wcWmbd3wB5MTdoUMTUSAsT",
+						"events": [
+							"onclick"
+						],
+						"externalLink": false,
+						"loader": "",
+						"parent": "same-tab",
+						"target": "Products",
+						"isHardCoded": true
+					}
+				],
+				"style": {
+					"backgroundColor": "#FAEEE0",
+					"borderWidth": "1px",
+					"borderColor": "#F5A652",
+					"display": "flex",
+					"justifyContent": "center",
+					"alignItems": "center",
+					"flexDirection": "row",
+					"color": "#F5A653",
+					"borderRadius": "10px",
+					"gap": "10px",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"width": "170px",
+					"height": "47px",
+					"cursor": "pointer",
+					"fontSize": "22px"
+				},
+				"serverSideRef": "vacay",
+				"classNames": [],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "delPUSMQgq",
+			"hidden": false,
+			"nodes": [
+				"MDOupsWmSA",
+				"4ZNVJ5wUoE"
+			],
+			"linkedNodes": {}
+		},
+		"MDOupsWmSA": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-arrow-left"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "16gOpwMdV-",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"4ZNVJ5wUoE": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Previous",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontWeight": "500",
+					"textAlign": "center",
+					"display": "block",
+					"width": "fit-content",
+					"minWidth": "fit-content",
+					"maxWidth": "fit-content",
+					"height": "fit-content",
+					"minHeight": "fit-content",
+					"maxHeight": "fit-content",
+					"fontFamily": "Poppins",
+					"justifyContent": "flex-start",
+					"alignItems": "start"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "16gOpwMdV-",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}

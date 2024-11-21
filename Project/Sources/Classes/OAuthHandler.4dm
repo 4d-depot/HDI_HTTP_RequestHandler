@@ -18,7 +18,7 @@ Function callback($strategy : Text; $req : 4D:C1709.IncomingMessage) : 4D:C1709.
 	//End if 
 	
 	If (Session:C1714.storage.error#Null:C1517)
-		$res.setHeader("Location"; "/$lib/renderer/?w=Auth")
+		$res.setHeader("Location"; "/$lib/renderer/?w=Authentication")
 		$res.setStatus(302)
 		return $res
 	End if 
@@ -71,7 +71,7 @@ Function callback($strategy : Text; $req : 4D:C1709.IncomingMessage) : 4D:C1709.
 		
 		$extAuth.userName:=$user.username
 		$extAuth.success:=True:C214
-		$res.setHeader("Location"; "/$lib/renderer/?w=Auth")
+		$res.setHeader("Location"; "/$lib/renderer/?w=Authentication")
 		$res.setStatus(302)
 	Else 
 		//$extAuth.userName:="Failed authentication"

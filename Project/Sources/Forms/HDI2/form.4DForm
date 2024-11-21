@@ -59,8 +59,8 @@
 			"objects": {
 				"information3": {
 					"type": "input",
-					"top": 130,
-					"left": 50,
+					"top": 122,
+					"left": 60,
 					"width": 900,
 					"height": 400,
 					"sizingX": "grow",
@@ -78,6 +78,19 @@
 						"onDataChange"
 					],
 					"class": "description"
+				},
+				"Button12": {
+					"type": "button",
+					"text": "Show the HTTPRequestHandlers.json file on disk",
+					"top": 611,
+					"left": 317,
+					"width": 400,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button12.4dm",
+					"focusable": false
 				}
 			}
 		},
@@ -88,7 +101,7 @@
 					"top": 100,
 					"left": 50,
 					"width": 900,
-					"height": 180,
+					"height": 140,
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"dataSource": "Infos[1].Description",
@@ -107,9 +120,9 @@
 				},
 				"Input3": {
 					"type": "input",
-					"left": 634,
-					"top": 289,
-					"width": 400,
+					"left": 88,
+					"top": 239,
+					"width": 350,
 					"height": 20,
 					"dataSource": "Form:C1466.startURLWithParameters",
 					"events": [
@@ -124,9 +137,9 @@
 				"Button7": {
 					"type": "button",
 					"text": "Run with GET",
-					"top": 199,
-					"left": 692,
-					"width": 200,
+					"top": 239,
+					"left": 460,
+					"width": 120,
 					"height": 20,
 					"events": [
 						"onClick"
@@ -137,9 +150,9 @@
 				"Text14": {
 					"type": "text",
 					"text": "URL:",
-					"top": 289,
-					"left": 524,
-					"width": 100,
+					"top": 239,
+					"left": 0,
+					"width": 80,
 					"height": 20,
 					"textAlign": "right",
 					"fontWeight": "bold",
@@ -149,9 +162,9 @@
 				"Input5": {
 					"type": "input",
 					"left": 50,
-					"top": 546,
-					"width": 650,
-					"height": 300,
+					"top": 652,
+					"width": 261,
+					"height": 209,
 					"enterable": false,
 					"focusable": false,
 					"fill": "transparent",
@@ -162,7 +175,7 @@
 				"Text16": {
 					"type": "text",
 					"text": "HTTP Handlers.json",
-					"top": 516,
+					"top": 622,
 					"left": 50,
 					"width": 250,
 					"height": 20,
@@ -172,9 +185,9 @@
 				},
 				"Input6": {
 					"type": "input",
-					"left": 78,
-					"top": 289,
-					"width": 224,
+					"left": 613,
+					"top": 427,
+					"width": 326,
 					"height": 177,
 					"enterable": false,
 					"focusable": false,
@@ -186,19 +199,66 @@
 				"Text4": {
 					"type": "text",
 					"text": "Body",
-					"top": 575,
-					"left": 733,
+					"top": 279,
+					"left": 709,
 					"width": 250,
 					"height": 20,
 					"fontSize": 18,
 					"fontWeight": "bold",
 					"stroke": "#6495ed"
 				},
+				"Button8": {
+					"type": "button",
+					"text": "Run with POST",
+					"top": 248,
+					"left": 845,
+					"width": 120,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button8.4dm",
+					"focusable": false
+				},
+				"Input8": {
+					"type": "input",
+					"left": 709,
+					"top": 310,
+					"width": 224,
+					"height": 65,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"dataSource": "LinesCode[1]",
+					"styledText": true
+				},
+				"Web Area2": {
+					"type": "webArea",
+					"left": 42,
+					"top": 310,
+					"width": 474,
+					"height": 258,
+					"urlSource": "Form:C1466.getURL"
+				},
+				"Button14": {
+					"type": "button",
+					"text": "Open GeneralHandling singleton on gettingStarted function",
+					"top": 804,
+					"left": 664,
+					"width": 600,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button14.4dm",
+					"focusable": false
+				},
 				"Input7": {
 					"type": "input",
-					"left": 130,
-					"top": 239,
-					"width": 400,
+					"left": 684,
+					"top": 248,
+					"width": 150,
 					"height": 20,
 					"dataSource": "Form:C1466.startURL",
 					"events": [
@@ -210,25 +270,92 @@
 					"borderStyle": "none",
 					"fontSize": 16
 				},
-				"Button8": {
-					"type": "button",
-					"text": "Run with POST",
+				"Text24": {
+					"type": "text",
+					"text": "URL:",
+					"top": 248,
+					"left": 576,
+					"width": 100,
+					"height": 20,
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"fontSize": 16,
+					"stroke": "#6495ed"
+				},
+				"Line": {
+					"type": "line",
 					"top": 239,
-					"left": 692,
-					"width": 200,
+					"left": 593,
+					"width": 0,
+					"height": 347,
+					"stroke": "#1e90ff"
+				},
+				"Text25": {
+					"type": "text",
+					"text": "Response",
+					"top": 403,
+					"left": 715,
+					"width": 250,
+					"height": 20,
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"stroke": "#6495ed"
+				},
+				"Text26": {
+					"type": "text",
+					"text": "Web area:",
+					"top": 279,
+					"left": 42,
+					"width": 80,
+					"height": 20,
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"fontSize": 16,
+					"stroke": "#6495ed"
+				},
+				"Input12": {
+					"type": "input",
+					"left": 296,
+					"top": 684,
+					"width": 326,
+					"height": 177,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"dataSource": "Form:C1466.response",
+					"styledText": true
+				},
+				"Text27": {
+					"type": "text",
+					"text": "Body",
+					"top": 653,
+					"left": 525,
+					"width": 250,
+					"height": 20,
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"stroke": "#6495ed"
+				},
+				"Button15": {
+					"type": "button",
+					"text": "Run with DELETE",
+					"top": 622,
+					"left": 661,
+					"width": 120,
 					"height": 20,
 					"events": [
 						"onClick"
 					],
-					"method": "ObjectMethods/Button8.4dm",
+					"method": "ObjectMethods/Button15.4dm",
 					"focusable": false
 				},
-				"Input8": {
+				"Input13": {
 					"type": "input",
-					"left": 720,
-					"top": 607,
+					"left": 525,
+					"top": 684,
 					"width": 224,
-					"height": 177,
+					"height": 65,
 					"enterable": false,
 					"focusable": false,
 					"fill": "transparent",
@@ -236,13 +363,44 @@
 					"dataSource": "LinesCode[1]",
 					"styledText": true
 				},
-				"Web Area2": {
-					"type": "webArea",
-					"left": 585,
-					"top": 318,
-					"width": 345,
-					"height": 175,
-					"urlSource": "Form:C1466.startURLWithParameters"
+				"Input14": {
+					"type": "input",
+					"left": 500,
+					"top": 622,
+					"width": 150,
+					"height": 20,
+					"dataSource": "Form:C1466.startURL",
+					"events": [
+						"onClick"
+					],
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontSize": 16
+				},
+				"Text28": {
+					"type": "text",
+					"text": "URL:",
+					"top": 622,
+					"left": 392,
+					"width": 100,
+					"height": 20,
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"fontSize": 16,
+					"stroke": "#6495ed"
+				},
+				"Text29": {
+					"type": "text",
+					"text": "Response",
+					"top": 777,
+					"left": 531,
+					"width": 250,
+					"height": 20,
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"stroke": "#6495ed"
 				}
 			}
 		},
@@ -893,5 +1051,5 @@
 			"View 1": {}
 		}
 	},
-	"geometryStamp": 2884
+	"geometryStamp": 2965
 }

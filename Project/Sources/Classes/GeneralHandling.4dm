@@ -11,15 +11,15 @@ Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.Outgoing
 	
 	Case of 
 		: ($request.verb="GET")
-			$result.setBody("Calling URL "+$request.url+" has been handled with the GET verb - Param in the URL is "+$request.urlQuery.param)
+			$result.setBody("Calling URL "+$request.url+" has been handled with the GET verb"+Char:C90(Carriage return:K15:38)+"Param in the URL is "+$request.urlQuery.param)
 			$result.setHeader("Content-Type"; "text/plain")
 			
 		: ($request.verb="POST")
 			
-			$body:="Calling URL "+$request.url+" has been handled with the POST verb - Param in the body is "
+			$body:="Calling URL "+$request.url+" has been handled with the POST verb"+Char:C90(Carriage return:K15:38)+"Param in the body is: "
 			
 			If (Value type:C1509($request.getJSON())=Is object:K8:27)
-				$body:=$body+"object and value is "+JSON Stringify:C1217($request.getJSON())
+				$body:=$body+"an object and value is "+JSON Stringify:C1217($request.getJSON())
 			End if 
 			
 			$result.setBody($body)
