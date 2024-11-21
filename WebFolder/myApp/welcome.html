@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<style>
+
+.mainBody {
+background: #fffff;
+}
+
+.main {
+  font-family : "Poppins";    
+  display : flex;
+  flex-direction : row;
+  justify-content : flex-start;
+  align-items : start;
+}
+
+.card {
+	margin-top: 10px;
+	margin-left: 10px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  	display : flex;
+    flex-direction : column;
+	justify-content : space-between;
+ 	align-items : center;
+	gap : 30px;
+	background-color: #ecebfe;
+	border-radius : 15px;
+ }
+
+.info {
+color: rgb(173, 89, 208);
+font-size: 18px;
+}
+
+
+.button {
+  background-color : rgb(92, 46, 201);
+  width : 150px;
+  height:40px;
+  border-radius : 8px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  border-color : transparent;
+  color : #ffffff;
+  font-size: 16px;
+  font-weight : 600;
+}
+
+</style>
+
+</head>
+
+
+<body class="mainBody" onLoad="getUser()">
+<div class="main">
+
+<div class="card"  id="demo">
+	<div class="info"> Welcome in the app, <b><span id="user"> </span></b> !</div>
+	<button class="button" type="button" onclick="quit()">Quit</button>
+</div>
+
+</div>
+
+</body>
+
+
+
+<script>
+
+function getUser() {
+  var XHR = new XMLHttpRequest();
+  
+  XHR.onload = function() {
+    let response = XHR.response;
+      document.getElementById("user").innerHTML = JSON.parse(response).result.fullname;
+      
+  };
+  XHR.open('POST', 'http://127.0.0.1:80/rest/$singleton/Utilities/getUser'); 
+  XHR.send();
+};
+
+function quit() {
+  var XHR = new XMLHttpRequest();
+  
+ 
+  XHR.onload = function() {
+    let result = XHR.response;
+    if (JSON.parse(result).result === 'OK')  { 
+      window.location = "http://127.0.0.1/myApp";
+      }
+  };
+  
+  XHR.open('POST', 'http://127.0.0.1:80/rest/$catalog/clearSession'); 
+  XHR.send();
+};
+
+ </script>
+ 
+</html>
+	  
+

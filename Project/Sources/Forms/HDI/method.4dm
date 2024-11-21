@@ -1,7 +1,7 @@
-C_TEXT:C284($version; $maintext; $subtext)
-C_TEXT:C284($r)
-C_TEXT:C284($format)
-C_LONGINT:C283($width; $height; $shift)
+_O_C_TEXT:C284($version; $maintext; $subtext)
+_O_C_TEXT:C284($r)
+_O_C_TEXT:C284($format)
+
 
 Case of 
 		

@@ -11,11 +11,10 @@ Function handleFiles($request : 4D:C1709.IncomingMessage) : Variant
 	
 	var $image; $thumbnail : Picture
 	var $width; $height : Integer
-	var $name; $type : Text
+	var $name; $type; $prop : Text
 	
+	var $parts : Object
 	
-	var $body : Blob
-	var $fileName; $fileType : Text
 	var $file : 4D:C1709.File
 	var $created : Boolean
 	

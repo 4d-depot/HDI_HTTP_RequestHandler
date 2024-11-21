@@ -21,14 +21,17 @@ Case of
 		
 		Form:C1466.productURL:=cs:C1710.URLBuilder.me.buildURL(Form:C1466.product; "image"; Form:C1466.size)
 		
+		manageTexts
 		
 		
 	: (Form event code:C388=On Page Change:K2:54)
 		
-		Form:C1466.startURLWithParameters:="http://127.0.0.1/start/example?param=demo"
+		//Form.startURLWithParameters:="http://127.0.0.1/start/example?param=demo"
 		Form:C1466.startURL:="http://127.0.0.1/start/"
 		
-		Form:C1466.url2:="http://127.0.0.1/myApp/fileUpload.html"
+		Form:C1466.url:="http://127.0.0.1/fileUpload.html"
+		
+		manageTexts
 		
 		
 	: (Form event code:C388=On Close Box:K2:21)

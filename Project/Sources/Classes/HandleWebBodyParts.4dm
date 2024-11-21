@@ -8,6 +8,7 @@ Function handleWebBodyParts() : Object
 	var $partContent : Blob
 	var $partName; $partMimeType; $partFileName : Text
 	var $result:={size: 0}
+	var $file : 4D:C1709.File
 	
 	
 	For ($i; 1; WEB Get body part count:C1211)

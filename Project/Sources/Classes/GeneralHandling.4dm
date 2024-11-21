@@ -5,7 +5,9 @@ shared singleton Class constructor()
 	
 Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
-	$result:=4D:C1709.OutgoingMessage.new()
+	var $result:=4D:C1709.OutgoingMessage.new()
+	var $body : Text
+	
 	
 	Case of 
 		: ($request.verb="GET")
@@ -30,16 +32,11 @@ Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.Outgoing
 	
 Function handleApp($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
-	var $result:=4D:C1709.OutgoingMessage.new()
-	var $file : 4D:C1709.File
-	
-	
 	If (Session:C1714.isGuest())
 		Use (Session:C1714.storage)
 			Session:C1714.storage.redirection:=New shared object:C1526("url"; $request.url; "urlPath"; $request.urlPath.copy(ck shared:K85:29; Session:C1714.storage.redirection))
 		End use 
 	End if 
-	
 	
 	return This:C1470.redirect($request.url; $request.urlPath)
 	
@@ -75,7 +72,7 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 			$result:=This:C1470.redirect($url; $urlPath)
 			
 		: (($urlPath.length=1) && ($url="/myApp"))
-			$file:=File:C1566("/PACKAGE/WebFolder/myApp/welcome2.html")
+			$file:=File:C1566("/PACKAGE/WebFolder/myApp/welcome.html")
 			$result.setBody($file.getContent())
 			$result.setHeader("Content-Type"; "text/html")
 			

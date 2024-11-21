@@ -1,9 +1,20 @@
-<!DOCTYPE html>
-<html>
+.input {
+ border-width : 1px;
+ border-color : rgb(171, 171, 197); 
+ border-radius : 15px;
+ width : 300px;
+ height : 40px;
+ font-family : "Poppins"; 
+ font-size: 20px;
+ padding-left: 10px;
+}
 
-<head>
-  
-<style>
+.textInput {
+  display : flex;
+  flex-direction : column;
+  justify-content : flex-start;
+
+}
 
 .mainBody {
 background: #fffff;
@@ -23,7 +34,6 @@ background: #fffff;
 	padding-top: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-bottom: 20px;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   	display : flex;
     flex-direction : column;
@@ -38,24 +48,20 @@ background: #fffff;
 color: rgb(173, 89, 208);
 font-size: 18px;
 }
-  
-</style>
-  
-</head>
 
-
-<body class="mainBody">
-
-<div class="main">
-
-<div class="card"  id="demo">
-	<div class="info"> This is the page 1</div>
-</div>
+.button {
+  background-color : rgb(92, 46, 201);
+  width : 150px;
+  height:40px;
+  border-radius : 8px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  border-color : transparent;
+  color : #ffffff;
+  font-size: 16px;
+  font-weight : 600;
+}
  
-</div>
-
-</body>
-
-</html>
-	  
-
+.error {
+ color : red;
+ }

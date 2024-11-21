@@ -30,7 +30,6 @@
 		<field name="role" uuid="ED59AAB8DDDF48C78E9520A7312F2A1E" type="10" limiting_length="255" never_null="true" id="4"/>
 		<field name="firstname" uuid="DF6D9EB15F9D47D08CD5D656E6E8D2A3" type="10" limiting_length="255" never_null="true" id="5"/>
 		<field name="lastname" uuid="03E703A927664CBC99820EF0D9031655" type="10" limiting_length="255" never_null="true" id="6"/>
-		<field name="isOK" uuid="3D3B18055123494EA1CEFA73CE3F13C7" type="1" never_null="true" id="7"/>
 		<primary_key field_name="ID" field_uuid="ABD6359470924D5893C41AE5D88A222E"/>
 		<table_extra>
 			<editor_table_info displayable_fields_count="8">

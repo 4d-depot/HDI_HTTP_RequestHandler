@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  
-<style>
-
 .mainBody {
 background: #fffff;
 }
@@ -38,24 +31,4 @@ background: #fffff;
 color: rgb(173, 89, 208);
 font-size: 18px;
 }
-  
-</style>
-  
-</head>
-
-
-<body class="mainBody">
-
-<div class="main">
-
-<div class="card"  id="demo">
-	<div class="info"> This is the page 1</div>
-</div>
  
-</div>
-
-</body>
-
-</html>
-	  
-
