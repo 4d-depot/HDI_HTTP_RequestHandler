@@ -30,11 +30,9 @@ exposed Function authentify($credentials : Object) : Text
 	
 	return $result
 	
-exposed Function clearSession() : Text
-	Session:C1714.clearPrivileges()
-	return "OK"
+exposed Function getSessions() : Collection
 	
-exposed Function getPrivileges() : Text
-	return Session:C1714.getPrivileges().join(",")
+	var $oauth:=Session:C1714.storage.oauth=Null:C1517 ? [] : Session:C1714.storage.oauth
 	
+	return $oauth
 	

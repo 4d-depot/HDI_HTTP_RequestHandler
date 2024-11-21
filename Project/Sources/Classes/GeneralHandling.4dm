@@ -82,5 +82,4 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 			$result.setStatus(307)
 	End case 
 	
-	
 	return $result

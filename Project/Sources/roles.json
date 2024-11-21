@@ -1,34 +1,8 @@
 {
 	"permissions": {
-		"allowed": [
-			{
-				"applyTo": "Products",
-				"type": "dataclass",
-				"describe": [
-					"None2"
-				]
-			},
-			{
-				"applyTo": "ds",
-				"type": "datastore",
-				"describe": [
-					"None"
-				]
-			}
-		]
+		"allowed": []
 	},
-	"privileges": [
-		{
-			"id": "2yXocFU6CnED887oDydbzG",
-			"privilege": "None2",
-			"includes": []
-		},
-		{
-			"id": "6BqSknQB6FLfzD2eDTTtDP",
-			"privilege": "None",
-			"includes": []
-		}
-	],
+	"privileges": [],
 	"roles": [
 		{
 			"id": "cdcapuvwi8yi7TQ1oM2rL4",

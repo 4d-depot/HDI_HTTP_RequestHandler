@@ -22,5 +22,53 @@
         "method": "handleFiles",
         "regexPattern": "/fileDownload",
         "verbs": "get"
-    }
+    },
+{
+    "class": "OAuthHandler",
+    "method": "xAuthCallback",
+    "regexPattern": "/oauth/x/callback",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "xAuth",
+    "regexPattern": "/oauth/x",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "googleAuthCallback",
+    "regexPattern": "/oauth/google/callback",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "googleAuth",
+    "regexPattern": "/oauth/google",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "microsoftAuthCallback",
+    "regexPattern": "/oauth/microsoft/callback",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "microsoftAuth",
+    "regexPattern": "/oauth/microsoft",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "githubAuthCallback",
+    "regexPattern": "/oauth/github/callback",
+    "verbs": "get"
+  },
+  {
+    "class": "OAuthHandler",
+    "method": "githubAuth",
+    "regexPattern": "/oauth/github",
+    "verbs": "get"
+  }
 ]

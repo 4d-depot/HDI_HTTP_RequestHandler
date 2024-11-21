@@ -1,3 +1,9 @@
+
+
+
+var $notDropped : cs:C1710.ExternalAuthentication
+
+
 Case of 
 		
 	: (Form event code:C388=On Load:K2:1)
@@ -7,6 +13,7 @@ Case of
 		
 		InitInfo
 		
+		$notDropped:=ds:C1482.ExternalAuthentication.all().drop()
 		
 		// Page 1
 		Form:C1466.products:=ds:C1482.Products.all()
