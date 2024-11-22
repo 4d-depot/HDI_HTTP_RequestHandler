@@ -9,24 +9,28 @@ Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.Outgoing
 	var $body : Text
 	
 	
+	$body:="Called URL: "+$request.url+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
+	$body:=$body+"The verb is: "+$request.verb+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
+	$body:=$body+"There are "+String:C10($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
+	
 	Case of 
 		: ($request.verb="GET")
-			$result.setBody("Calling URL "+$request.url+" has been handled with the GET verb"+Char:C90(Carriage return:K15:38)+"Param in the URL is "+$request.urlQuery.param)
-			$result.setHeader("Content-Type"; "text/plain")
+			$body:=$body+"The parameters are received as an object: "+Char:C90(Carriage return:K15:38)+JSON Stringify:C1217($request.urlQuery; *)
 			
 		: ($request.verb="POST")
 			
-			$body:="Calling URL "+$request.url+" has been handled with the POST verb"+Char:C90(Carriage return:K15:38)+"Param in the body is: "
-			
-			If (Value type:C1509($request.getJSON())=Is object:K8:27)
-				$body:=$body+"an object and value is "+JSON Stringify:C1217($request.getJSON())
-			End if 
-			
-			$result.setBody($body)
-			$result.setHeader("Content-Type"; "text/plain")
+			Case of 
+				: (Value type:C1509($request.getJSON())=Is object:K8:27)
+					$body:=$body+"The body is received as an object: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+JSON Stringify:C1217($request.getJSON())
+					
+				: (Value type:C1509($request.getJSON())=Is text:K8:3)
+					$body:=$body+"The body is received as a text: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+$request.getText()
+			End case 
 			
 	End case 
 	
+	$result.setBody($body)
+	$result.setHeader("Content-Type"; "text/plain")
 	return $result
 	
 	

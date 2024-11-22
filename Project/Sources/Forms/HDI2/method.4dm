@@ -33,8 +33,9 @@ Case of
 		
 	: (Form event code:C388=On Page Change:K2:54)
 		
-		Form:C1466.startURLWithParameters:="http://127.0.0.1/start/example?param=demo"
-		Form:C1466.startURL:="http://127.0.0.1/start/"
+		Form:C1466.json:=1
+		Form:C1466.startURLWithParameters:="http://127.0.0.1/start/example?param=demo&name=4D"
+		Form:C1466.startURL:="http://127.0.0.1/start/demo/test"
 		
 		Form:C1466.url:="http://127.0.0.1/fileUpload.html"
 		
