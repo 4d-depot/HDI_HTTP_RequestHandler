@@ -2,6 +2,5 @@
 var $path : Text
 
 
-$path:=Folder:C1567("/RESOURCES/Files").platformPath
-//$path:=$folder.platformPath+"roles.json"
+$path:=Folder:C1567("/PACKAGE/Files").platformPath
 SHOW ON DISK:C922($path)

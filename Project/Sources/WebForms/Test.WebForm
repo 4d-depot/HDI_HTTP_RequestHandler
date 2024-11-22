@@ -2,23 +2,90 @@
 	"metadata": {
 		"v": "1.0",
 		"datasources": [],
-		"styles": []
+		"styles": [
+			{
+				"name": "draft",
+				"content": "self {\n  font-style :  italic;\n}",
+				"children": {},
+				"parentId": null,
+				"scope": "local",
+				"origin": "U9R9EoNXdC",
+				"id": "Nq1T_lnDsJMXZQmI7S2RE"
+			}
+		]
 	},
 	"components": {
 		"ROOT": {
-			"parent": "",
 			"type": {
 				"resolvedName": "Container"
 			},
 			"isCanvas": true,
 			"props": {
-				"airyMode": false,
-				"className": "bg-white h-full w-full px-6",
 				"classNames": [],
-				"events": []
+				"events": [],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6"
 			},
-			"displayName": "App",
+			"displayName": "Page",
 			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"U9R9EoNXdC"
+			],
+			"linkedNodes": {}
+		},
+		"U9R9EoNXdC": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"display": "flex"
+				},
+				"classNames": [
+					"draft"
+				]
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"fITWqiZrIe"
+			],
+			"linkedNodes": {}
+		},
+		"fITWqiZrIe": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Test",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": ""
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "U9R9EoNXdC",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}
