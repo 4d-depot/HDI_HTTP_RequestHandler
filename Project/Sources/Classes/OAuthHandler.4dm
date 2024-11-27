@@ -5,8 +5,10 @@ shared singleton Class constructor()
 Function callback($strategy : Text; $req : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
 	var $registry:=cs:C1710.OAuthRegistry.new()
+	
 	var $token:=$registry.get($strategy).token($req)
-	var $oauth : Collection
+	
+	//var $oauth : Collection
 	var $extAuth : cs:C1710.ExternalAuthenticationEntity
 	var $status : Object
 	var $user : Object
@@ -23,13 +25,13 @@ Function callback($strategy : Text; $req : 4D:C1709.IncomingMessage) : 4D:C1709.
 		return $res
 	End if 
 	
-	If (Session:C1714.storage.oauth=Null:C1517)
-		Use (Session:C1714.storage)
-			Session:C1714.storage.oauth:=New shared collection:C1527()
-		End use 
-	End if 
+	//If (Session.storage.oauth=Null)
+	//Use (Session.storage)
+	//Session.storage.oauth:=New shared collection()
+	//End use 
+	//End if 
 	
-	$oauth:=Session:C1714.storage.oauth
+	//$oauth:=Session.storage.oauth
 	
 	Case of 
 		: ($strategy="twitter")

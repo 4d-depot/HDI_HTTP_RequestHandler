@@ -18,7 +18,15 @@
 				"pageSize": 100
 			}
 		],
-		"styles": []
+		"styles": [
+			{
+				"name": "blue-header-alternate-rows",
+				"content": "self {\n  border-radius: 10px;\n  box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%);\n}\n\nself .header .header-cell {\n  background-color: #E2F5F5;\n  color: #7EC9C9;\n  font-weight: bold;\n  padding: 1.25rem 2rem;\n}\n\nself .row {\n  align-items: center;\n}\n\nself .row .cell {\n  padding: 0.5rem 2rem;\n}\n\nself .row .cell > span {\n  justify-content: flex-start;\n}\n\nself .row.selected {\n  background-color: #d2d7f5;\n}\n\nself .row-even:not(.selected):not(:hover) {\n  background-color: #f8f6ff;\n}\n\nself .header .resizable > :not([hidden]) ~ :not([hidden]),\nself .row > :not([hidden]) ~ :not([hidden]),\nself .Grid .innerScrollContainer,\nself .Grid .innerScrollContainer > :not([hidden]) ~ :not([hidden]) {\n  border-width: 0;\n}",
+				"parentId": null,
+				"id": "PL652ycE3f6pTdyAeRfgp",
+				"scope": "local"
+			}
+		]
 	},
 	"components": {
 		"ROOT": {
@@ -43,7 +51,8 @@
 							"name": "result",
 							"type": "Variable",
 							"datasource": "sessions"
-						}
+						},
+						"disabled": true
 					},
 					{
 						"type": "simple-action",
@@ -79,18 +88,18 @@
 					}
 				],
 				"airyMode": true,
-				"className": "bg-white h-full w-full px-6"
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"display": "flex"
+				}
 			},
 			"displayName": "Page",
 			"custom": {},
 			"parent": "",
 			"hidden": false,
 			"nodes": [
-				"aJkFngInv8",
-				"UmNqmHJKtG",
-				"rxTr13Um-U",
-				"DuVWC73Qcu",
-				"delPUSMQgq"
+				"1W3Y9hD6Gz",
+				"Rdrb8WAZ-d"
 			],
 			"linkedNodes": {}
 		},
@@ -302,159 +311,6 @@
 			"nodes": [],
 			"linkedNodes": {}
 		},
-		"rxTr13Um-U": {
-			"type": {
-				"resolvedName": "DataTable"
-			},
-			"isCanvas": false,
-			"props": {
-				"iterable": true,
-				"classNames": [],
-				"events": [],
-				"style": {},
-				"headerHeight": 36,
-				"rowHeight": 30,
-				"datasource": "sessions",
-				"columns": [
-					{
-						"title": "Avatar",
-						"source": "picture",
-						"format": "",
-						"width": "76px",
-						"sorting": false,
-						"id": "vVN8wmZ44ifjoCDV7T7GMn"
-					},
-					{
-						"title": "Fullname",
-						"source": "fullname",
-						"format": "",
-						"width": "235px",
-						"sorting": false,
-						"id": "9GefcQPLR6WWMGvvVSsNz3"
-					},
-					{
-						"title": "Username",
-						"source": "username",
-						"format": "",
-						"width": "317px",
-						"sorting": false,
-						"id": "1gcMQLyf9MUPij9zFhChHm"
-					},
-					{
-						"title": "Email",
-						"source": "email",
-						"format": "",
-						"width": "465px",
-						"sorting": false,
-						"id": "9XP59gPqDxPaDgdJ6ZRyHZ"
-					}
-				]
-			},
-			"displayName": "DataTable",
-			"custom": {},
-			"parent": "ROOT",
-			"hidden": false,
-			"nodes": [],
-			"linkedNodes": {}
-		},
-		"UmNqmHJKtG": {
-			"type": {
-				"resolvedName": "Text"
-			},
-			"isCanvas": false,
-			"props": {
-				"events": [],
-				"iterableChild": true,
-				"doc": [
-					{
-						"type": "paragraph",
-						"children": [
-							{
-								"text": "Accounts",
-								"bold": true,
-								"italic": false,
-								"underlined": false,
-								"strikethrough": false
-							}
-						]
-					}
-				],
-				"datasource": ""
-			},
-			"displayName": "Text",
-			"custom": {},
-			"parent": "ROOT",
-			"hidden": false,
-			"nodes": [],
-			"linkedNodes": {}
-		},
-		"DuVWC73Qcu": {
-			"type": {
-				"resolvedName": "DataTable"
-			},
-			"isCanvas": false,
-			"props": {
-				"iterable": true,
-				"classNames": [],
-				"events": [],
-				"style": {},
-				"headerHeight": 36,
-				"rowHeight": 30,
-				"datasource": "authentications",
-				"columns": [
-					{
-						"title": "Username",
-						"source": "userName",
-						"format": "",
-						"width": "300px",
-						"sorting": false,
-						"id": "1gcMQLyf9MUPij9zFhChHm",
-						"dataType": "string"
-					},
-					{
-						"title": "With",
-						"source": "with",
-						"format": "",
-						"width": "200px",
-						"sorting": false,
-						"id": "9XP59gPqDxPaDgdJ6ZRyHZ",
-						"dataType": "string"
-					},
-					{
-						"title": "Success",
-						"source": "success",
-						"format": "",
-						"width": 150,
-						"sorting": false,
-						"id": "pEu3SVNQ9Pf5mFn8rtSohz"
-					},
-					{
-						"title": "When",
-						"source": "when",
-						"format": "Date short",
-						"width": 150,
-						"sorting": false,
-						"id": "x4XMz6e6NGtPY4LWnt5LsU",
-						"dataType": "date"
-					},
-					{
-						"title": "At",
-						"source": "at",
-						"format": "Simple",
-						"width": 150,
-						"sorting": false,
-						"id": "ubtm5MzfMGTuVv2V8cKumz",
-						"dataType": "duration"
-					}
-				]
-			},
-			"displayName": "DataTable",
-			"custom": {},
-			"parent": "ROOT",
-			"hidden": false,
-			"nodes": [],
-			"linkedNodes": {}
-		},
 		"aJkFngInv8": {
 			"type": {
 				"resolvedName": "StyleBox"
@@ -470,7 +326,7 @@
 			},
 			"displayName": "Stylebox",
 			"custom": {},
-			"parent": "ROOT",
+			"parent": "Rdrb8WAZ-d",
 			"hidden": false,
 			"nodes": [
 				"vEGeEQb21V",
@@ -496,7 +352,7 @@
 			},
 			"displayName": "Stylebox",
 			"custom": {},
-			"parent": "ROOT",
+			"parent": "Rdrb8WAZ-d",
 			"hidden": false,
 			"nodes": [
 				"16gOpwMdV-"
@@ -613,6 +469,190 @@
 			"displayName": "Text",
 			"custom": {},
 			"parent": "16gOpwMdV-",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"1W3Y9hD6Gz": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"width": "25%",
+					"gap": "20px",
+					"alignItems": "start",
+					"justifyContent": "flex-start"
+				},
+				"classNames": []
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"OMdfOS5U5f"
+			],
+			"linkedNodes": {}
+		},
+		"OMdfOS5U5f": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "TO COMPLETE"
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontSize": "20px",
+					"color": "#777E90",
+					"fontWeight": "400",
+					"width": "auto"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "1W3Y9hD6Gz",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"Rdrb8WAZ-d": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"aJkFngInv8",
+				"4msN_HqLfM",
+				"QwiyjDkq4D",
+				"delPUSMQgq"
+			],
+			"linkedNodes": {}
+		},
+		"QwiyjDkq4D": {
+			"type": {
+				"resolvedName": "DataTable"
+			},
+			"isCanvas": false,
+			"props": {
+				"iterable": true,
+				"classNames": [
+					"blue-header-alternate-rows"
+				],
+				"events": [],
+				"loopable": true,
+				"style": {
+					"height": "650px"
+				},
+				"headerHeight": 50,
+				"rowHeight": 30,
+				"datasource": "authentications",
+				"columns": [
+					{
+						"title": "Username",
+						"source": "userName",
+						"format": "",
+						"width": "300px",
+						"sorting": false,
+						"id": "mgtYWtdnBhhnvVSMY2ZUmL",
+						"dataType": "string"
+					},
+					{
+						"title": "When",
+						"source": "when",
+						"format": "Date short",
+						"width": 150,
+						"sorting": false,
+						"id": "4r1uo4YCC6ehiDTLZoHSju",
+						"dataType": "date"
+					},
+					{
+						"title": "With",
+						"source": "with",
+						"format": "",
+						"width": "200px",
+						"sorting": false,
+						"id": "ec7TEA85EJqLKQptVanaNV",
+						"dataType": "string"
+					},
+					{
+						"title": "At",
+						"source": "at",
+						"format": "Without seconds",
+						"width": "350px",
+						"sorting": false,
+						"id": "9JZGscxDgFaxNhx8wiDmo5",
+						"dataType": "duration"
+					}
+				]
+			},
+			"displayName": "DataTable",
+			"custom": {},
+			"parent": "Rdrb8WAZ-d",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"4msN_HqLfM": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Authentications done",
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"color": "#7EC9C9",
+					"fontWeight": "500",
+					"fontSize": "20px"
+				}
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "Rdrb8WAZ-d",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}

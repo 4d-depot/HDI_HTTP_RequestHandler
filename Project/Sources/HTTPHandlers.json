@@ -12,6 +12,24 @@
         "verbs": "get"
     },
     {
+        "class": "AuthenticateHandling",
+        "method": "authenticate",
+        "regexPattern": "/authenticate/",
+        "verbs": "post"
+    },
+    {
+        "class": "GeneralHandling",
+        "method": "startProcess",
+        "regexPattern": "/startProcess",
+        "verbs": "get"
+    },
+    {
+        "class": "GeneralHandling",
+        "method": "handleCallBack",
+        "regexPattern": "/callBack/",
+        "verbs": "get"
+    },
+    {
         "class": "FilesHandling",
         "method": "handleFiles",
         "regexPattern": "/fileUpload/",

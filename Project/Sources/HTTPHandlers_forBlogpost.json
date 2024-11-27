@@ -1,0 +1,8 @@
+[
+    {
+        "class": "GeneralHandling",
+        "method": "gettingStarted",
+        "pattern": "start",
+        "verbs": "get, post"
+    }
+]
