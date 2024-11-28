@@ -539,7 +539,9 @@
 			"props": {
 				"events": [],
 				"iterableChild": true,
-				"classNames": [],
+				"classNames": [
+					"cartStyle"
+				],
 				"style": {
 					"width": "fit-content"
 				}
