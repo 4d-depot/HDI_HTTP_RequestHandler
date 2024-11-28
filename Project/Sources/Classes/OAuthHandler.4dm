@@ -9,7 +9,7 @@ Function callback($strategy : Text; $req : 4D:C1709.IncomingMessage) : 4D:C1709.
 	var $token:=$registry.get($strategy).token($req)
 	
 	//var $oauth : Collection
-	var $extAuth : cs:C1710.ExternalAuthenticationEntity
+	var $extAuth : cs:C1710.oAuth2AuthenticationEntity
 	var $status : Object
 	var $user : Object
 	var $res:=4D:C1709.OutgoingMessage.new()
@@ -47,7 +47,7 @@ Function callback($strategy : Text; $req : 4D:C1709.IncomingMessage) : 4D:C1709.
 	//var $found
 	//var $sharedUser:=New shared object()
 	
-	$extAuth:=ds:C1482.ExternalAuthentication.new()
+	$extAuth:=ds:C1482.oAuth2Authentication.new()
 	$extAuth.when:=Current date:C33()
 	$extAuth.with:=$strategy
 	$extAuth.at:=Current time:C178()

@@ -570,7 +570,9 @@
 					"alignItems": "start",
 					"justifyContent": "flex-start"
 				},
-				"classNames": []
+				"classNames": [
+					"cartStyle"
+				]
 			},
 			"displayName": "Stylebox",
 			"custom": {},

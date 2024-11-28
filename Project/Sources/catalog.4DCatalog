@@ -64,7 +64,7 @@
 			</editor_table_info>
 		</table_extra>
 	</table>
-	<table name="ExternalAuthentication" uuid="5BC14741DB684FFAB1714F6B13027BAF" id="5">
+	<table name="oAuth2Authentication" uuid="5BC14741DB684FFAB1714F6B13027BAF" id="5">
 		<field name="ID" uuid="D3627F900C1B4B40AF0B38347863C412" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="userName" uuid="49523BE7D3EE41B7923D498568CC44F6" type="10" limiting_length="255" never_null="true" id="2"/>
 		<field name="with" uuid="6B6FDD7C01084DBE977F99F415D2CE6D" type="10" limiting_length="255" never_null="true" id="3"/>
@@ -101,7 +101,7 @@
 	</index>
 	<index kind="regular" unique_keys="true" uuid="F4A6C01E91BC44F79E1A98F66950397A" type="7">
 		<field_ref uuid="D3627F900C1B4B40AF0B38347863C412" name="ID">
-			<table_ref uuid="5BC14741DB684FFAB1714F6B13027BAF" name="ExternalAuthentication"/>
+			<table_ref uuid="5BC14741DB684FFAB1714F6B13027BAF" name="oAuth2Authentication"/>
 		</field_ref>
 	</index>
 	<base_extra package_name="HDI_Template_v18" structure_file_name="HowDoI" data_file_path=":HowDoI.4DD">

@@ -30,3 +30,20 @@ Function authenticate($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMe
 	End if 
 	
 	return $result
+	
+	
+Function clearSession() : 4D:C1709.OutgoingMessage
+	var $result:=4D:C1709.OutgoingMessage.new()
+	
+	Session:C1714.clearPrivileges()
+	$result.setBody("OK")
+	
+	return $result
+	
+	
+Function getUser() : 4D:C1709.OutgoingMessage
+	var $result:=4D:C1709.OutgoingMessage.new()
+	
+	$result.setBody(Session:C1714.storage.info)
+	
+	return $result

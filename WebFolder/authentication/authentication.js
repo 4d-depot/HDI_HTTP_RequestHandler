@@ -18,7 +18,8 @@ function sendData(data) {
       }
       else {
       document.getElementById("authenticationFailed").style.visibility = "visible";
-      document.getElementById("authenticationFailed").innerHTML = JSON.parse(result).result;
+      //document.getElementById("authenticationFailed").innerHTML = JSON.parse(result).result;
+      document.getElementById("authenticationFailed").innerHTML = result;
       }
   };
   

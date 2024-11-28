@@ -1,9 +1,5 @@
 
 
-
-var $notDropped : cs:C1710.ExternalAuthentication
-
-
 Case of 
 		
 	: (Form event code:C388=On Load:K2:1)
@@ -13,7 +9,6 @@ Case of
 		
 		InitInfo
 		
-		$notDropped:=ds:C1482.ExternalAuthentication.all().drop()
 		
 		// Page 1
 		Form:C1466.products:=ds:C1482.Products.all()
@@ -38,6 +33,8 @@ Case of
 		Form:C1466.startURL:="http://127.0.0.1/start/demo/test"
 		
 		Form:C1466.url:="http://127.0.0.1/fileUpload.html"
+		
+		Form:C1466.request:=""
 		
 		manageTexts
 		

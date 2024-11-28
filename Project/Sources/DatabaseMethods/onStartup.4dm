@@ -1,5 +1,7 @@
 
-//00_Start
+00_Start
+
+var $notDropped : cs:C1710.oAuth2AuthenticationSelection
 
 var $webServer; $settings : Object
 
@@ -9,6 +11,6 @@ $settings.sessionCookieSameSite:=Web SameSite Lax:K73:36
 $webServer.stop()
 $webServer.start($settings)
 
-//Use (Storage)
-//Storage.session:=New shared object("cookie"; "")
-//End use 
+generate_settings
+
+$notDropped:=ds:C1482.oAuth2Authentication.all().drop()

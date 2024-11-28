@@ -18,6 +18,18 @@
         "verbs": "post"
     },
     {
+        "class": "AuthenticateHandling",
+        "method": "clearSession",
+        "regexPattern": "/clearSession/",
+        "verbs": "get"
+    },
+    {
+        "class": "AuthenticateHandling",
+        "method": "getUser",
+        "regexPattern": "/getUser/",
+        "verbs": "get"
+    },
+    {
         "class": "GeneralHandling",
         "method": "startProcess",
         "regexPattern": "/startProcess",

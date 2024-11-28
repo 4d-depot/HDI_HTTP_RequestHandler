@@ -28,6 +28,8 @@ Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.Outgoing
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
 	var $body : Text
+	var $bodyText : Text
+	var $bodyObj : Object
 	
 	
 	$body:="Called URL: "+$request.url+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
@@ -39,13 +41,23 @@ Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.Outgoing
 			$body:=$body+"The parameters are received as an object: "+Char:C90(Carriage return:K15:38)+JSON Stringify:C1217($request.urlQuery; *)
 			
 		: ($request.verb="POST")
-			
 			Case of 
-				: (Value type:C1509($request.getJSON())=Is object:K8:27)
-					$body:=$body+"The body is received as an object: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+JSON Stringify:C1217($request.getJSON())
+				: ($request.getHeader("content-type")="application/json")
 					
-				: (Value type:C1509($request.getJSON())=Is text:K8:3)
-					$body:=$body+"The body is received as a text: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+$request.getText()
+					$bodyObj:=$request.getJSON()
+					
+					If (Value type:C1509($bodyObj)=Is object:K8:27)
+						$body:=$body+"The body is received as an object: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+JSON Stringify:C1217($bodyObj)
+					End if 
+					
+				: ($request.getHeader("content-type")="text/plain")
+					
+					$bodyText:=$request.getText()
+					
+					If (Value type:C1509($bodyText)=Is text:K8:3)
+						$body:=$body+"The body is received as a text: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+$bodyText
+					End if 
+					
 			End case 
 			
 	End case 
@@ -113,28 +125,34 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 Function startProcess($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
+	var $cookie; $cookies : Text
+	var $start; $end : Integer
+	var $headers:=New object:C1471()
+	var $requestObj; $callback : Object
+	
 	
 	Use (Session:C1714.storage)
-		Session:C1714.storage.start:=New shared object:C1526("milliseconds"; Milliseconds:C459)
+		Session:C1714.storage.start:=New shared object:C1526("begin"; Milliseconds:C459)
 	End use 
 	
-	DELAY PROCESS:C323(Current process:C322; Num:C11($request.urlQuery.delay))
+	DELAY PROCESS:C323(Current process:C322; (Num:C11($request.urlQuery.delay)*60))
 	
-	$cookie:=$request.getHeader("cookie")
-	$start:=Position:C15("4DSID_HDI_HTTP_RequestHandler"; $cookie)
-	$end:=Position:C15(";"; $cookie)
+	$cookies:=$request.getHeader("cookie")
+	$start:=Position:C15("4DSID_HDI_HTTP_RequestHandler"; $cookies)
+	$end:=Position:C15(";"; $cookies; $start)
 	
 	If ($end>=1)
-		$cookie:=Substring:C12($cookie; $start; $end-$start)
+		$cookie:=Substring:C12($cookies; $start; $end-$start)
+	Else 
+		$cookie:=Substring:C12($cookies; $start)
 	End if 
 	
-	$headers:=New object:C1471()
 	$headers["Cookie"]:=$cookie
-	
 	$requestObj:={method: HTTP GET method:K71:1; headers: $headers}
-	$request:=4D:C1709.HTTPRequest.new("http://127.0.0.1/callBack/"; $requestObj).wait()
+	$callback:=4D:C1709.HTTPRequest.new("http://127.0.0.1/callBack/"; $requestObj).wait()
 	
-	$result.setBody($request.response.body)
+	$result.setBody($callback.response.body)
+	$result.setHeader("Content-Type"; $callback.response.headers["content-type"])
 	
 	return $result
 	
@@ -143,9 +161,11 @@ Function handleCallBack() : 4D:C1709.OutgoingMessage
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
 	
-	$duration:=Milliseconds:C459-Session:C1714.storage.start.milliseconds
+	var $duration : Integer
 	
-	If ($duration>5000)
+	$duration:=Milliseconds:C459-Session:C1714.storage.start.begin
+	
+	If ($duration>3000)
 		$result.setBody("Too late")
 	Else 
 		$result.setBody("OK")

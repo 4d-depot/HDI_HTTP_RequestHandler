@@ -10,4 +10,4 @@ var $cookie : Text
 
 
 
-Form:C1466.request:="http://127.0.0.1/startProcess?delay=600"
+Form:C1466.request:="http://127.0.0.1/startProcess?delay=4"

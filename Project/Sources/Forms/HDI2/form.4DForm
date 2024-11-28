@@ -1088,41 +1088,35 @@
 			"objects": {
 				"Button16": {
 					"type": "button",
-					"text": "Run request and wait too long before callBack",
-					"top": 183,
-					"left": 137,
-					"width": 300,
+					"text": "Run and wait 4 seconds before calling the callback",
+					"top": 360,
+					"left": 50,
+					"width": 350,
 					"height": 20,
 					"events": [
 						"onClick"
 					],
-					"method": "ObjectMethods/Button16.4dm"
-				},
-				"Web Area": {
-					"type": "webArea",
-					"left": 115,
-					"top": 387,
-					"width": 591,
-					"height": 259,
-					"urlSource": "Form:C1466.request"
+					"method": "ObjectMethods/Button16.4dm",
+					"focusable": false
 				},
 				"Button17": {
 					"type": "button",
-					"text": "Run request quickly",
-					"top": 262,
-					"left": 137,
-					"width": 300,
+					"text": "Run and wait 2 seconds before calling the callback",
+					"top": 440,
+					"left": 50,
+					"width": 350,
 					"height": 20,
 					"events": [
 						"onClick"
 					],
-					"method": "ObjectMethods/Button17.4dm"
+					"method": "ObjectMethods/Button17.4dm",
+					"focusable": false
 				},
 				"Button18": {
 					"type": "button",
 					"text": "Open the startProcess function in the GeneralHandling singleton",
-					"top": 183,
-					"left": 484,
+					"top": 520,
+					"left": 50,
 					"width": 420,
 					"height": 20,
 					"events": [
@@ -1135,21 +1129,103 @@
 				},
 				"Text30": {
 					"type": "text",
-					"text": "http://127.0.0.1/startProcess?delay=600",
-					"top": 211,
-					"left": 143,
+					"text": "http://127.0.0.1/startProcess?delay=4",
+					"top": 390,
+					"left": 50,
 					"width": 300,
-					"height": 30,
+					"height": 20,
 					"fontSize": 16
 				},
 				"Text31": {
 					"type": "text",
-					"text": "http://127.0.0.1/startProcess?delay=60",
-					"top": 294,
-					"left": 137,
+					"text": "http://127.0.0.1/startProcess?delay=2",
+					"top": 470,
+					"left": 50,
 					"width": 300,
-					"height": 30,
+					"height": 20,
 					"fontSize": 16
+				},
+				"Web Area": {
+					"type": "webArea",
+					"left": 50,
+					"top": 650,
+					"width": 410,
+					"height": 150,
+					"urlSource": "Form:C1466.request",
+					"webEngine": "embedded"
+				},
+				"Text32": {
+					"type": "text",
+					"text": "Web area:",
+					"top": 620,
+					"left": 50,
+					"width": 150,
+					"height": 22,
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"fontSize": 18,
+					"stroke": "#6495ed"
+				},
+				"Input15": {
+					"type": "input",
+					"left": 510,
+					"top": 390,
+					"width": 260,
+					"height": 250,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"dataSource": "LinesCode{7}",
+					"styledText": true
+				},
+				"Text33": {
+					"type": "text",
+					"text": "HTTP Handlers.json",
+					"top": 360,
+					"left": 510,
+					"width": 200,
+					"height": 20,
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"stroke": "#6495ed"
+				},
+				"information5": {
+					"type": "input",
+					"top": 100,
+					"left": 50,
+					"width": 900,
+					"height": 220,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[5].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"Button19": {
+					"type": "button",
+					"text": "Open the handleCallBack function in the GeneralHandling singleton",
+					"top": 570,
+					"left": 50,
+					"width": 420,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button19.4dm",
+					"focusable": false,
+					"fontFamily": "0",
+					"fontSize": 13
 				}
 			}
 		},
@@ -1188,5 +1264,5 @@
 			"View 1": {}
 		}
 	},
-	"geometryStamp": 4309
+	"geometryStamp": 4638
 }
