@@ -754,7 +754,7 @@
 					"top": 70,
 					"left": 50,
 					"width": 900,
-					"height": 300,
+					"height": 280,
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"dataSource": "Infos[4].Description",
@@ -898,7 +898,7 @@
 					"type": "button",
 					"text": "Show WebFolder/myApp folder",
 					"top": 360,
-					"left": 340,
+					"left": 300,
 					"width": 270,
 					"height": 20,
 					"events": [
@@ -987,7 +987,7 @@
 					"type": "input",
 					"left": 50,
 					"top": 372,
-					"width": 260,
+					"width": 230,
 					"height": 130,
 					"enterable": false,
 					"focusable": false,
@@ -1009,10 +1009,10 @@
 				},
 				"Button13": {
 					"type": "button",
-					"text": "Open GeneralHandling singleton",
+					"text": "Open the handleApp function in GeneralHandling singleton",
 					"top": 360,
-					"left": 620,
-					"width": 270,
+					"left": 590,
+					"width": 380,
 					"height": 20,
 					"events": [
 						"onClick"
@@ -1264,5 +1264,5 @@
 			"View 1": {}
 		}
 	},
-	"geometryStamp": 4643
+	"geometryStamp": 4656
 }
