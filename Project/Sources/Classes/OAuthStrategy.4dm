@@ -1,5 +1,11 @@
 
 
+property name : Text
+property options : Object
+property authOpts : Object
+property tokenOpts : Object
+
+
 Class constructor($name : Text; $options : Object; $authOpts : Object; $tokenOpts : Object)
 	
 	This:C1470.name:=$name
@@ -51,11 +57,11 @@ Function authenticate() : 4D:C1709.OutgoingMessage
 	var $res:=4D:C1709.OutgoingMessage.new()
 	var $url:=""
 	
-	$url+=This:C1470.options["authorizeUrl"]
+	$url+=This:C1470.options.authorizeUrl
 	$url+="?response_type=code"
-	$url+="&client_id="+This:C1470.options["clientId"]
-	$url+="&redirect_uri="+This:C1470.options["redirectUri"]
-	$url+="&scope="+This:C1470.options["scope"]
+	$url+="&client_id="+This:C1470.options.clientId
+	$url+="&redirect_uri="+This:C1470.options.redirectUri
+	$url+="&scope="+This:C1470.options.scope
 	$url+="&state="+Session:C1714.id
 	$url+="&"+This:C1470.objectToUrlEncoded(This:C1470.authOpts)
 	
@@ -71,17 +77,16 @@ Function token($req : 4D:C1709.IncomingMessage) : Text
 	End use 
 	
 	If ($req.urlQuery.error#Null:C1517)
-		//return This.renderError($req.urlQuery.error; 500)
 		Use (Session:C1714.storage)
 			Session:C1714.storage.error:=New shared object:C1526("message"; $req.urlQuery.error)
 		End use 
 		return ""
 	Else 
 		
-		var $redirectUri:=This:C1470.encodeURI(This:C1470.options["redirectUri"])
+		var $redirectUri:=This:C1470.encodeURI(This:C1470.options.redirectUri)
 		
 		var $credentials:=""
-		BASE64 ENCODE:C895(This:C1470.options["clientId"]+":"+This:C1470.options["clientSecret"]; $credentials)
+		BASE64 ENCODE:C895(This:C1470.options.clientId+":"+This:C1470.options.clientSecret; $credentials)
 		
 		var $headers:={Authorization: "Basic "+$credentials}
 		$headers["Content-Type"]:="application/x-www-form-urlencoded"
@@ -90,11 +95,11 @@ Function token($req : 4D:C1709.IncomingMessage) : Text
 		var $body:=""
 		$body+="code="+$req.urlQuery.code
 		$body+="&grant_type=authorization_code"
-		$body+="&client_id="+This:C1470.options["clientId"]
+		$body+="&client_id="+This:C1470.options.clientId
 		$body+="&redirect_uri="+$redirectUri
 		$body+="&"+This:C1470.objectToUrlEncoded(This:C1470.tokenOpts)
 		
-		var $request:=4D:C1709.HTTPRequest.new(This:C1470.options["tokenUrl"]; {method: "POST"; headers: $headers; body: $body})
+		var $request:=4D:C1709.HTTPRequest.new(This:C1470.options.tokenUrl; {method: "POST"; headers: $headers; body: $body})
 		$request.wait()
 		
 		If ($request.response.status#200)

@@ -1,20 +1,18 @@
-
 shared singleton Class constructor()
 	
 	
-Function gettingStarted_Blogpost($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
+Function gettingStarted_forBlogpost($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
 	var $body : Text
 	
-	$body:="Called URL: "+$request.url+Char:C90(Carriage return:K15:38)
+	$body:="Called URL: "+$request.url+"\n"
 	
-	$body:=$body+"The parameters are received as an object: "+Char:C90(Carriage return:K15:38)+JSON Stringify:C1217($request.urlQuery; *)+Char:C90(Carriage return:K15:38)
+	$body+="The parameters are received as an object:"+"\n"+JSON Stringify:C1217($request.urlQuery; *)+"\n"
 	
-	$body:=$body+"The verb is: "+$request.verb+Char:C90(Carriage return:K15:38)
+	$body+="The verb is: "+$request.verb+"\n"
 	
-	$body:=$body+"There are "+String:C10($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
-	
+	$body+="There are "+String:C10($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+"\n"+"\n"
 	
 	$result.setBody($body)
 	$result.setHeader("Content-Type"; "text/plain")
@@ -28,34 +26,37 @@ Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.Outgoing
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
 	var $body : Text
-	var $bodyText : Text
+	var $bodyText; $header : Text
 	var $bodyObj : Object
 	
 	
-	$body:="Called URL: "+$request.url+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
-	$body:=$body+"The verb is: "+$request.verb+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
-	$body:=$body+"There are "+String:C10($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)
+	$body:="Called URL: "+$request.url+"\n"+"\n"
+	$body+="The verb is: "+$request.verb+"\n"+"\n"
+	$body+="There are "+String:C10($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+"\n"+"\n"
 	
 	Case of 
 		: ($request.verb="GET")
-			$body:=$body+"The parameters are received as an object: "+Char:C90(Carriage return:K15:38)+JSON Stringify:C1217($request.urlQuery; *)
+			$body+="The parameters are received as an object:"+"\n"+JSON Stringify:C1217($request.urlQuery; *)
 			
 		: ($request.verb="POST")
+			
+			$header:=$request.getHeader("content-type")
+			
 			Case of 
-				: ($request.getHeader("content-type")="application/json")
+				: ($header="application/json")
 					
 					$bodyObj:=$request.getJSON()
 					
 					If (Value type:C1509($bodyObj)=Is object:K8:27)
-						$body:=$body+"The body is received as an object: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+JSON Stringify:C1217($bodyObj)
+						$body+="The body is received as an object:"+"\n"+"\n"+"Value is: "+JSON Stringify:C1217($bodyObj)
 					End if 
 					
-				: ($request.getHeader("content-type")="text/plain")
+				: ($header="text/plain")
 					
 					$bodyText:=$request.getText()
 					
 					If (Value type:C1509($bodyText)=Is text:K8:3)
-						$body:=$body+"The body is received as a text: "+Char:C90(Carriage return:K15:38)+Char:C90(Carriage return:K15:38)+"Value is: "+$bodyText
+						$body+="The body is received as a text:"+"\n"+"\n"+"Value is: "+$bodyText
 					End if 
 					
 			End case 
@@ -87,7 +88,7 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 	
 	Case of 
 		: (Session:C1714.isGuest())
-			$result.setHeader("Location"; "http://127.0.0.1/authentication/authentication.html")
+			$result.setHeader("Location"; "/authentication/authentication.html")
 			$result.setStatus(307)
 			
 		: (($urlPath.length=2) && (Position:C15("/myApp/"; $url)#0) && (Position:C15(".html"; $url)#0))
@@ -96,7 +97,7 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 				$result.setBody($file.getContent())
 				$result.setHeader("Content-Type"; "text/html")
 			Else 
-				$result.setHeader("Location"; "http://127.0.0.1/error/notFound.html")
+				$result.setHeader("Location"; "/error/notFound.html")
 				$result.setStatus(307)
 			End if 
 			
@@ -115,7 +116,7 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 			
 			
 		Else 
-			$result.setHeader("Location"; "http://127.0.0.1/error/notAuthorized.html")
+			$result.setHeader("Location"; "/error/notAuthorized.html")
 			$result.setStatus(307)
 	End case 
 	
@@ -125,8 +126,6 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 Function startProcess($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
-	var $cookie; $cookies : Text
-	var $start; $end : Integer
 	var $headers:=New object:C1471()
 	var $requestObj; $callback : Object
 	
@@ -137,17 +136,7 @@ Function startProcess($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMe
 	
 	DELAY PROCESS:C323(Current process:C322; (Num:C11($request.urlQuery.delay)*60))
 	
-	$cookies:=$request.getHeader("cookie")
-	$start:=Position:C15("4DSID_HDI_HTTP_RequestHandler"; $cookies)
-	$end:=Position:C15(";"; $cookies; $start)
-	
-	If ($end>=1)
-		$cookie:=Substring:C12($cookies; $start; $end-$start)
-	Else 
-		$cookie:=Substring:C12($cookies; $start)
-	End if 
-	
-	$headers["Cookie"]:=$cookie
+	$headers["Cookie"]:=$request.getHeader("cookie")
 	$requestObj:={method: HTTP GET method:K71:1; headers: $headers}
 	$callback:=4D:C1709.HTTPRequest.new("http://127.0.0.1/callBack/"; $requestObj).wait()
 	

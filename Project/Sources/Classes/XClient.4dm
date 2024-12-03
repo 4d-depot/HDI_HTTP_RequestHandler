@@ -1,4 +1,6 @@
 
+property apiUrl : Text
+
 shared singleton Class constructor()
 	
 	This:C1470.apiUrl:="https://api.x.com/2"
@@ -6,11 +8,12 @@ shared singleton Class constructor()
 Function getCurrentUser($token : Text) : Object
 	
 	var $headers:={Authorization: "Bearer "+$token}
+	var $body : Object
 	
 	var $request:=4D:C1709.HTTPRequest.new(This:C1470.apiUrl+"/users/me?user.fields=profile_image_url"; {method: "GET"; headers: $headers})
 	$request.wait()
 	
-	var $body:=$request.response.body.data
+	$body:=$request.response.body.data
 	
 	return {\
 		username: $body.username; \

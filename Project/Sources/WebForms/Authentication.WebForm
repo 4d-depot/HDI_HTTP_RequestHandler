@@ -705,7 +705,7 @@
 					"width": 250,
 					"height": "auto"
 				},
-				"imgSrc": "/$shared/settings.png"
+				"imgSrc": "/$shared/settings.jpeg"
 			},
 			"displayName": "Image",
 			"custom": {},
@@ -813,7 +813,7 @@
 					"width": "fit-content",
 					"height": "auto"
 				},
-				"imgSrc": "/$shared/settings.png"
+				"imgSrc": "/$shared/settings.jpeg"
 			},
 			"displayName": "Image",
 			"custom": {},
@@ -922,7 +922,7 @@
 					"width": "auto",
 					"height": "auto"
 				},
-				"imgSrc": "/$shared/generate_settings.png"
+				"imgSrc": "/$shared/generate_settings.jpeg"
 			},
 			"displayName": "Image",
 			"custom": {},
@@ -1029,7 +1029,7 @@
 					"width": "fit-content",
 					"height": "auto"
 				},
-				"imgSrc": "/$shared/generate_settings.png"
+				"imgSrc": "/$shared/generate_settings.jpeg"
 			},
 			"displayName": "Image",
 			"custom": {},

@@ -11,7 +11,6 @@ Function handleFiles($request : 4D:C1709.IncomingMessage) : Variant
 	var $width; $height : Integer
 	var $name; $type; $prop : Text
 	var $parts : Object
-	var $file : 4D:C1709.File
 	var $created : Boolean
 	
 	Case of 

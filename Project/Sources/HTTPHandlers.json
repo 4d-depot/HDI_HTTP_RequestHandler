@@ -1,59 +1,59 @@
 [
-    {
-        "class": "GeneralHandling",
-        "method": "gettingStarted",
-        "pattern": "start",
-        "verbs": "get, post"
-    },
-    {
-        "class": "GeneralHandling",
-        "method": "handleApp",
-        "regexPattern": "/myApp",
-        "verbs": "get"
-    },
-    {
-        "class": "AuthenticateHandling",
-        "method": "authenticate",
-        "regexPattern": "/authenticate/",
-        "verbs": "post"
-    },
-    {
-        "class": "AuthenticateHandling",
-        "method": "clearSession",
-        "regexPattern": "/clearSession/",
-        "verbs": "get"
-    },
-    {
-        "class": "AuthenticateHandling",
-        "method": "getUser",
-        "regexPattern": "/getUser/",
-        "verbs": "get"
-    },
-    {
-        "class": "GeneralHandling",
-        "method": "startProcess",
-        "regexPattern": "/startProcess",
-        "verbs": "get"
-    },
-    {
-        "class": "GeneralHandling",
-        "method": "handleCallBack",
-        "regexPattern": "/callBack/",
-        "verbs": "get"
-    },
-    {
-        "class": "FilesHandling",
-        "method": "handleFiles",
-        "regexPattern": "/fileUpload/",
-        "verbs": "post"
-    },
-    {
-        "class": "FilesHandling",
-        "method": "handleFiles",
-        "regexPattern": "/fileDownload",
-        "verbs": "get"
-    },
-{
+  {
+    "class": "GeneralHandling",
+    "method": "gettingStarted",
+    "pattern": "start",
+    "verbs": "get, post"
+  },
+  {
+    "class": "GeneralHandling",
+    "method": "handleApp",
+    "regexPattern": "/myApp",
+    "verbs": "get"
+  },
+  {
+    "class": "AuthenticateHandling",
+    "method": "authenticate",
+    "regexPattern": "/authenticate/",
+    "verbs": "post"
+  },
+  {
+    "class": "AuthenticateHandling",
+    "method": "clearSession",
+    "regexPattern": "/clearSession/",
+    "verbs": "get"
+  },
+  {
+    "class": "AuthenticateHandling",
+    "method": "getUser",
+    "regexPattern": "/getUser/",
+    "verbs": "get"
+  },
+  {
+    "class": "GeneralHandling",
+    "method": "startProcess",
+    "regexPattern": "/startProcess",
+    "verbs": "get"
+  },
+  {
+    "class": "GeneralHandling",
+    "method": "handleCallBack",
+    "regexPattern": "/callBack/",
+    "verbs": "get"
+  },
+  {
+    "class": "FilesHandling",
+    "method": "handleFiles",
+    "regexPattern": "/fileUpload/",
+    "verbs": "post"
+  },
+  {
+    "class": "FilesHandling",
+    "method": "handleFiles",
+    "regexPattern": "/fileDownload",
+    "verbs": "get"
+  },
+  {
     "class": "OAuthHandler",
     "method": "xAuthCallback",
     "regexPattern": "/oauth/x/callback",
@@ -75,30 +75,6 @@
     "class": "OAuthHandler",
     "method": "googleAuth",
     "regexPattern": "/oauth/google",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "microsoftAuthCallback",
-    "regexPattern": "/oauth/microsoft/callback",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "microsoftAuth",
-    "regexPattern": "/oauth/microsoft",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "githubAuthCallback",
-    "regexPattern": "/oauth/github/callback",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "githubAuth",
-    "regexPattern": "/oauth/github",
     "verbs": "get"
   }
 ]
