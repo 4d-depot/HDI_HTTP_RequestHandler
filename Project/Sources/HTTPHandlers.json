@@ -14,19 +14,19 @@
   {
     "class": "AuthenticateHandling",
     "method": "authenticate",
-    "regexPattern": "/authenticate/",
+    "pattern": "authenticate",
     "verbs": "post"
   },
   {
     "class": "AuthenticateHandling",
     "method": "clearSession",
-    "regexPattern": "/clearSession/",
+    "pattern": "clearSession",
     "verbs": "get"
   },
   {
     "class": "AuthenticateHandling",
     "method": "getUser",
-    "regexPattern": "/getUser/",
+    "pattern": "getUser",
     "verbs": "get"
   },
   {
@@ -38,13 +38,13 @@
   {
     "class": "GeneralHandling",
     "method": "handleCallBack",
-    "regexPattern": "/callBack/",
+    "pattern": "callBack",
     "verbs": "get"
   },
   {
     "class": "FilesHandling",
     "method": "handleFiles",
-    "regexPattern": "/fileUpload/",
+    "pattern": "fileUpload",
     "verbs": "post"
   },
   {

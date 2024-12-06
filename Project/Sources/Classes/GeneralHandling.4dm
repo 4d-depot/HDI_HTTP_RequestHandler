@@ -1,27 +1,6 @@
 shared singleton Class constructor()
 	
 	
-Function gettingStarted_forBlogpost($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
-	
-	var $result:=4D:C1709.OutgoingMessage.new()
-	var $body : Text
-	
-	$body:="Called URL: "+$request.url+"\n"
-	
-	$body+="The parameters are received as an object:"+"\n"+JSON Stringify:C1217($request.urlQuery; *)+"\n"
-	
-	$body+="The verb is: "+$request.verb+"\n"
-	
-	$body+="There are "+String:C10($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+"\n"+"\n"
-	
-	$result.setBody($body)
-	$result.setHeader("Content-Type"; "text/plain")
-	
-	return $result
-	
-	
-	
-	
 Function gettingStarted($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 	
 	var $result:=4D:C1709.OutgoingMessage.new()
@@ -91,7 +70,7 @@ Function redirect($url : Text; $urlPath : Collection) : 4D:C1709.OutgoingMessage
 			$result.setHeader("Location"; "/authentication/authentication.html")
 			$result.setStatus(307)
 			
-		: (($urlPath.length=2) && (Position:C15("/myApp/"; $url)#0) && (Position:C15(".html"; $url)#0))
+		: (($urlPath.length=2) && (Position:C15(".html"; $url)#0))
 			$file:=File:C1566("/PACKAGE/WebFolder"+$url)
 			If ($file.exists)
 				$result.setBody($file.getContent())

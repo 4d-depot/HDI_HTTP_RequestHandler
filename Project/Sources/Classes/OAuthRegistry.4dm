@@ -9,27 +9,27 @@ Class constructor()
 	
 	This:C1470.register("twitter"; \
 		{\
-		authorizeUrl: "https://twitter.com/i/oauth2/authorize"; \
-		tokenUrl: "https://api.x.com/2/oauth2/token"; \
+		authorizeUrl: ds:C1482.Settings.getKey("X_AUTHORIZED_URL"); \
+		tokenUrl: ds:C1482.Settings.getKey("X_TOKEN_URL"); \
 		clientId: ds:C1482.Settings.getKey("X_CLIENT_ID"); \
 		clientSecret: ds:C1482.Settings.getKey("X_CLIENT_SECRET"); \
 		redirectUri: $publicUrl+ds:C1482.Settings.getKey("X_REDIRECT_URI"); \
-		scope: "users.read tweet.read"}; \
-		{code_challenge: "challenge"; code_challenge_method: "plain"}; \
-		{code_verifier: "challenge"}\
+		scope: ds:C1482.Settings.getKey("X_SCOPE")}; \
+		{code_challenge: ds:C1482.Settings.getKey("X_CODE_CHALLENGE"); code_challenge_method: ds:C1482.Settings.getKey("X_CODE_CHALLENGE_METHOD")}; \
+		{code_verifier: ds:C1482.Settings.getKey("X_CODE_VERIFIER")}\
 		)
 	
 	
 	This:C1470.register("google"; \
 		{\
-		authorizeUrl: "https://accounts.google.com/o/oauth2/v2/auth"; \
-		tokenUrl: "https://oauth2.googleapis.com/token"; \
+		authorizeUrl: ds:C1482.Settings.getKey("GOOGLE_AUTHORIZE_URL"); \
+		tokenUrl: ds:C1482.Settings.getKey("GOOGLE_TOKEN_URL"); \
 		clientId: ds:C1482.Settings.getKey("GOOGLE_CLIENT_ID"); \
 		clientSecret: ds:C1482.Settings.getKey("GOOGLE_CLIENT_SECRET"); \
 		redirectUri: $publicUrl+ds:C1482.Settings.getKey("GOOGLE_REDIRECT_URI"); \
-		scope: "profile"}; \
-		{include_granted_scopes: "true"; access_type: "offline"}; \
-		{code_challenge: "challenge"; code_challenge_method: "plain"}\
+		scope: ds:C1482.Settings.getKey("GOOGLE_SCOPE")}; \
+		{include_granted_scopes: ds:C1482.Settings.getKey("GOOGLE_INCLUDE_GRANTED_SCOPES"); access_type: ds:C1482.Settings.getKey("GOOGLE_ACCESS_TYPE")}; \
+		{code_challenge: ds:C1482.Settings.getKey("GOOGLE_CODE_CHALLENGE"); code_challenge_method: ds:C1482.Settings.getKey("GOOGLE_CODE_CHALLENGE_METHOD")}\
 		)
 	
 	

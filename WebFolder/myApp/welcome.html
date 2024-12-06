@@ -52,24 +52,18 @@ font-size: 18px;
   font-size: 16px;
   font-weight : 600;
 }
-
 </style>
 
 </head>
 
-
 <body class="mainBody" onLoad="getUser()">
 <div class="main">
-
 <div class="card"  id="demo">
 	<div class="info"> Welcome in the app, <b><span id="user"> </span></b> !</div>
 	<button class="button" type="button" onclick="quit()">Quit</button>
 </div>
-
 </div>
-
 </body>
-
 
 
 <script>
@@ -79,29 +73,24 @@ function getUser() {
   
   XHR.onload = function() {
     let response = XHR.response;
-   //   document.getElementById("user").innerHTML = JSON.parse(response).result.fullname;
      document.getElementById("user").innerHTML = JSON.parse(response).fullname;
       
   };
- // XHR.open('POST', 'http://127.0.0.1:80/rest/$singleton/Utilities/getUser'); 
-   XHR.open('GET', 'http://127.0.0.1:80/getUser/'); 
+  XHR.open('GET', '/getUser/'); 
   XHR.send();
 };
 
 function quit() {
   var XHR = new XMLHttpRequest();
-  
  
   XHR.onload = function() {
     let result = XHR.response;
-//    if (JSON.parse(result).result === 'OK')  { 
+
       if (result === 'OK')  { 
-      window.location = "http://127.0.0.1/myApp";
+      window.location = "/myApp";
       }
   };
-  
- // XHR.open('POST', 'http://127.0.0.1:80/rest/$catalog/clearSession'); 
-  XHR.open('GET', 'http://127.0.0.1:80/clearSession/'); 
+  XHR.open('GET', '/clearSession/'); 
   XHR.send();
 };
 
