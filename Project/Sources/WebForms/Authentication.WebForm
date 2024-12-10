@@ -525,7 +525,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": "In this example, an authentication via "
+								"text": "In this example, an authentication using "
 							},
 							{
 								"bold": true,
@@ -539,7 +539,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": " is done."
+								"text": " is performed."
 							}
 						]
 					},
@@ -563,7 +563,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": "The client Id, client secret and redirect URL must be put in the "
+								"text": "You need to provide the client Id, client secret and redirect URL in the "
 							},
 							{
 								"bold": true,
@@ -601,7 +601,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": "For this you can replace the values provided in the "
+								"text": "For this you can replace the placeholder values in the "
 							},
 							{
 								"bold": true,
@@ -615,7 +615,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": " project method by your own keys."
+								"text": " project method with your own keys."
 							}
 						]
 					}

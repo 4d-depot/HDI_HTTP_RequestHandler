@@ -628,7 +628,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": "It returns an URL to download the product photo with the chosen size."
+								"text": "This function returns an URL to download the product photo with the selected size."
 							}
 						]
 					},
@@ -652,7 +652,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": "A navigation in a new tab is done on this URL."
+								"text": "The generated URL is then opened in a new tab."
 							}
 						]
 					}
@@ -1168,7 +1168,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": "This URL has a "
+								"text": "The URL includes a "
 							},
 							{
 								"bold": true,
@@ -1182,7 +1182,7 @@
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false,
-								"text": " prefix which is handled in the "
+								"text": " prefix, which is managed in the "
 							},
 							{
 								"bold": true,
