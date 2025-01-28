@@ -30,18 +30,6 @@
     "verbs": "get"
   },
   {
-    "class": "GeneralHandling",
-    "method": "startProcess",
-    "regexPattern": "/startProcess",
-    "verbs": "get"
-  },
-  {
-    "class": "GeneralHandling",
-    "method": "handleCallBack",
-    "pattern": "callBack",
-    "verbs": "get"
-  },
-  {
     "class": "FilesHandling",
     "method": "handleFiles",
     "pattern": "fileUpload",
@@ -51,30 +39,6 @@
     "class": "FilesHandling",
     "method": "handleFiles",
     "regexPattern": "/fileDownload",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "xAuthCallback",
-    "regexPattern": "/oauth/x/callback",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "xAuth",
-    "regexPattern": "/oauth/x",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "googleAuthCallback",
-    "regexPattern": "/oauth/google/callback",
-    "verbs": "get"
-  },
-  {
-    "class": "OAuthHandler",
-    "method": "googleAuth",
-    "regexPattern": "/oauth/google",
     "verbs": "get"
   }
 ]

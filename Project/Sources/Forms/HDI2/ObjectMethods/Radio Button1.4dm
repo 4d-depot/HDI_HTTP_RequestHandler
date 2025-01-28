@@ -1,5 +1,10 @@
 
 
+If (btnTrace)
+	TRACE:C157
+End if 
+
+
 Case of 
 	: (Form:C1466.small=1)
 		Form:C1466.size:="small"

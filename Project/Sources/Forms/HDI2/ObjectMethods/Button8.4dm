@@ -3,6 +3,10 @@
 var $requestObj : Object
 var $request : Object
 
+If (btnTrace)
+	TRACE:C157
+End if 
+
 
 Case of 
 	: (Form:C1466.json=1)
